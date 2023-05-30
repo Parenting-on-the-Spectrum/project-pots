@@ -4,7 +4,9 @@
   "description": "ABA How-to-Guide",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "client-dev": "webpack --watch",
+    "start": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "nodemon": "^2.0.22",
     "path": "^0.12.7",
     "react": "^18.2.0",
+    "react-dom": "^17.0.2",
     "webpack-cli": "^5.1.1"
   },
   "devDependencies": {
