@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "client-dev": "webpack --watch",
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./index.js",
+    "docker-build": "webpack && node ./server/index.js"
   },
   "repository": {
     "type": "git",
