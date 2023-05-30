@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "client-dev": "webpack --watch",
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./index.js",
+    "docker-build": "webpack && node ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,8 @@
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "path": "^0.12.7",
-    "react": "^18.2.0",
-    "react-dom": "^17.0.2",
+    "react": "^17.0.0 || ^18.2.0",
+    "react-dom": "17.0.0 || ^17.0.2",
     "webpack-cli": "^5.1.1"
   },
   "devDependencies": {
