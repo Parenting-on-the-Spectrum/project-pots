@@ -34,7 +34,7 @@
     "nodemon": "^2.0.22",
     "path": "^0.12.7",
     "react": "^18.2.0",
-    "react-dom": "17.0.0 || ^17.0.2",
+    "react-dom": "^18.2.0",
     "webpack-cli": "^5.1.1"
   },
   "devDependencies": {
