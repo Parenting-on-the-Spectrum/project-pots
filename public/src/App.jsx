@@ -5,10 +5,11 @@ import axios from 'axios';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import { Box, Typography, AppBar, Toolbar, Button, IconButton } from "@mui/material";
-// MUI components go here
 import MenuIcon from '@mui/icons-material/Menu';
+// import Logo from './logo.PNG';
 
 const App = () => {
+
   return (
     <div>
       <Header/>
