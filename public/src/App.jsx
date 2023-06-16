@@ -10,9 +10,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 const App = () => {
   const [page, setPage] = useState('home')
 
-
-
-
   return (
     <div >
       {page === 'home' ?
