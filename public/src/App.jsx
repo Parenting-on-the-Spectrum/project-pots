@@ -5,6 +5,8 @@ import axios from 'axios';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import Mission from './components/mission.jsx';
+import About from './components/About.jsx';
+
 import { Box, Typography, AppBar, Toolbar, Button, IconButton } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -22,7 +24,7 @@ const App = () => {
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
             We are Parenting on the Spectrum
-            </Typography>
+          </Typography>
           <Footer setPage={setPage} />
         </div>
         : null
@@ -33,10 +35,14 @@ const App = () => {
         </div>
         : null
       }
+      {page === 'about' ?
+        <div>
+          <About />
+        </div>
+        : null
+      }
     </div>
   )
-
-
 
 }
 
