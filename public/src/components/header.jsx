@@ -20,7 +20,6 @@ const Header = (props) => {
           sx={{ mr: 2 }}
 
         >
-          {/* <MenuIcon /> */}
           <DropDown/>
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

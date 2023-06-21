@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, Container, Grid, Typography, Button, Modal } from "@mui/material";
-import Socials from './socials.jsx';
+import { Box, Container, Grid, Typography, Button, Modal, Link } from "@mui/material";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 const Footer = (props) => {
@@ -45,7 +47,6 @@ const Footer = (props) => {
           </Grid>
           <Grid item xs={12}>
             <Typography color="textSecondary" variant="subtitle1" align="center">
-              {/* <p>{new Date().getFullYear()}</p> */}
               <Button color="inherit" onClick={(e) => pageClick(e, 'about')}>About Us</Button>
               <Button color="inherit" onClick={(e) => pageClick(e, 'mission')}>Our Mission</Button>
               <Button color="inherit" onClick={handleOpen}>Follow Us</Button>
@@ -57,10 +58,12 @@ const Footer = (props) => {
               >
                 <Box sx={style}>
                   <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Text in a modal
+                  Follow us on social media!
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                      <Link href="#" padding="10px" onClick={() => window.open('https://www.instagram.com/')} underline="hover">{<InstagramIcon/>}</Link>
+                      <Link href="#" padding="10px" onClick={() => window.open('https://facebook.com/')} underline="hover">{<FacebookIcon/>}</Link>
+                      <Link href="#" padding="10px" onClick={() => window.open('https://twitter.com/')} underline="hover">{<TwitterIcon/>}</Link>
                   </Typography>
                 </Box>
               </Modal>

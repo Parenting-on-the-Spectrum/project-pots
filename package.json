@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/The-Frying-Pans/project-pots#readme",
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.3",
+    "@mui/material": "^5.13.5",
     "axios": "^1.4.0",
     "babel": "^6.23.0",
     "cors": "^2.8.5",
