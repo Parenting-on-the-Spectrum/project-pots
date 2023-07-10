@@ -25,9 +25,17 @@ app.get('/index.html', (req, res) => {
 });
 
 
-// app.get('/', (req, res) => {
-//   res.sendStatus(200)
-// })
+app.get('/leaders', (req, res) => {
+  axios.get(`${process.env.API}/leaders`)
+  .then((leaders) => {
+    console.log(leaders.data)
+    res.send(leaders.data).status(201)
+  })
+  .catch((err) => {
+    console.log(err);
+    res.sendStatus(500);
+  })
+})
 
 // server listens on designated port
 app.listen(process.env.PORT, () => {
