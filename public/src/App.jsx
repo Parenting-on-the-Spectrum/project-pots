@@ -7,8 +7,10 @@ import Footer from './components/footer.jsx';
 import Mission from './components/mission.jsx';
 import About from './components/About.jsx';
 
-import { Box, Typography, AppBar, Toolbar, Button, IconButton } from "@mui/material";
+import { Box, Typography, AppBar, Toolbar, Button, IconButton, Link } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+
+import logo from './copy.jpeg';
 
 const App = () => {
   const [page, setPage] = useState('home');
@@ -24,10 +26,11 @@ const App = () => {
 
   useEffect(() => {
     leads();
-  }, [])
+  }, []);
 
   return (
     <div>
+      <img src={logo} className="logo" onClick={(e) => {e.preventDefault(); setPage('home')}}></img>
       {page === 'home' ?
         <div>
           <Header />
