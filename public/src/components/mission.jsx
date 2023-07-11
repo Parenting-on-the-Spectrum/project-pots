@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Typography } from "@mui/material";
+import { Typography, Modal, Box } from "@mui/material";
 
 const Mission = (props) => {
 
@@ -54,6 +54,7 @@ const Mission = (props) => {
         celebrating achievements, and providing unwavering support every step of the way.</Typography>
 
     </div>
+
   )
 }
 
