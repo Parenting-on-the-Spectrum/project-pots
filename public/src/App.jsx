@@ -12,6 +12,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const App = () => {
   const [page, setPage] = useState('home');
+  const [leaders, setLeaders] = useState([]);
+
+  let leads = () => {
+    axios.get('/leaders')
+    .then((staff) => {
+      setLeaders(staff.data);
+    })
+    .catch((err) => err.stack)
+  }
+
+  useEffect(() => {
+    leads();
+  }, [])
 
   return (
     <div>
@@ -37,7 +50,7 @@ const App = () => {
       }
       {page === 'about' ?
         <div>
-          <About />
+          <About people={leaders}/>
         </div>
         : null
       }
