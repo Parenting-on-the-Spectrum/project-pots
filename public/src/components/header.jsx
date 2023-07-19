@@ -23,7 +23,7 @@ const Header = (props) => {
           <DropDown/>
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Project Pots
+          Info
         </Typography>
         <Button color="inherit">Login?</Button>
       </Toolbar>

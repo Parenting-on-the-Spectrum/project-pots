@@ -48,7 +48,6 @@ const Footer = (props) => {
           <Grid item xs={12}>
             <Typography color="textSecondary" variant="subtitle1" align="center">
               <Button color="inherit" onClick={(e) => pageClick(e, 'about')}>About Us</Button>
-              <Button color="inherit" onClick={(e) => pageClick(e, 'mission')}>Our Mission</Button>
               <Button color="inherit" onClick={handleOpen}>Follow Us</Button>
               <Modal
                 open={open}

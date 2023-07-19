@@ -38,16 +38,11 @@ const App = () => {
             Welcome!
           </Typography>
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
             We are Parenting on the Spectrum
           </Typography>
+          <Mission/>
           <Footer setPage={setPage} />
-        </div>
-        : null
-      }
-      {page === 'mission' ?
-        <div>
-          <Mission />
         </div>
         : null
       }
