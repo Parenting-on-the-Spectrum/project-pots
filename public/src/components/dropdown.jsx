@@ -5,8 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const options = [
   'Menu',
   'Videos',
-  'Tips',
-  'Tricks',
+  'Tips & Tricks',
   'Resources'
 ];
 
