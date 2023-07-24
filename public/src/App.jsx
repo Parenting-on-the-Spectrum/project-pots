@@ -5,7 +5,8 @@ import axios from 'axios';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import Mission from './components/mission.jsx';
-import About from './components/About.jsx';
+import About from './components/about.jsx';
+import TipsTricks from './components/tipstricks.jsx';
 
 import { Box, Typography, AppBar, Toolbar, Button, IconButton, Link } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -52,6 +53,12 @@ const App = () => {
         </div>
         : null
       }
+      {/* {page === 'tips' ?
+        <div>
+          <TipsTricks tips={tips}/>
+        </div>
+        : null
+      } */}
     </div>
   )
 
