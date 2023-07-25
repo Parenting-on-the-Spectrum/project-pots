@@ -35,6 +35,16 @@ app.get('/leaders', (req, res) => {
   })
 })
 
+app.get('/tipstricks', (req, res) => {
+  axios.get(`${process.env.API}/tipstricks`)
+  .then((tips) => {
+    res.send(tips.data).status(201)
+  })
+  .catch((err) => {
+    res.sendStatus(500);
+  })
+})
+
 // server listens on designated port
 app.listen(process.env.PORT, () => {
   console.log(`App listening on port ${process.env.PORT}`)

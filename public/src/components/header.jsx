@@ -20,7 +20,7 @@ const Header = (props) => {
           sx={{ mr: 2 }}
 
         >
-          <DropDown/>
+          <DropDown setPage={props.setPage}/>
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Info

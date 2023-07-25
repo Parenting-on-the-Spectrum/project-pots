@@ -16,25 +16,35 @@ import logo from './copy.jpeg';
 const App = () => {
   const [page, setPage] = useState('home');
   const [leaders, setLeaders] = useState([]);
+  const [tipTrick, setTipTrick] = useState([]);
 
   let leads = () => {
     axios.get('/leaders')
-    .then((staff) => {
-      setLeaders(staff.data);
-    })
-    .catch((err) => err.stack)
+      .then((staff) => {
+        setLeaders(staff.data);
+      })
+      .catch((err) => err.stack)
+  }
+
+  let tips = () => {
+    axios.get('/tipstricks')
+      .then((tricks) => {
+        setTipTrick(tricks.data);
+      })
+      .catch((err) => err.stack)
   }
 
   useEffect(() => {
     leads();
+    tips();
   }, []);
 
   return (
     <div>
-      <img src={logo} className="logo" onClick={(e) => {e.preventDefault(); setPage('home')}}></img>
+      <img src={logo} className="logo" onClick={(e) => { e.preventDefault(); setPage('home') }}></img>
       {page === 'home' ?
         <div>
-          <Header />
+          <Header setPage={setPage} />
           <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
             Welcome!
           </Typography>
@@ -42,23 +52,35 @@ const App = () => {
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
             We are Parenting on the Spectrum
           </Typography>
-          <Mission/>
+          <Mission />
           <Footer setPage={setPage} />
         </div>
         : null
       }
       {page === 'about' ?
         <div>
-          <About people={leaders}/>
+          <About people={leaders} />
         </div>
         : null
       }
-      {/* {page === 'tips' ?
+      {page === 'tips' ?
         <div>
-          <TipsTricks tips={tips}/>
+          <TipsTricks tips={tipTrick} />
         </div>
         : null
-      } */}
+      }
+      {page === 'resources' ?
+        <div>
+          resources placeholder
+        </div>
+        : null
+      }
+      {page === 'videos' ?
+        <div>
+          videos placeholder
+        </div>
+        : null
+      }
     </div>
   )
 

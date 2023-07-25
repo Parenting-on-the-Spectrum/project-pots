@@ -9,7 +9,13 @@ const options = [
   'Resources'
 ];
 
-export default function SimpleListMenu() {
+const dropSets = [
+  'videos',
+  'tips',
+  'resources'
+]
+
+export default function SimpleListMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const open = Boolean(anchorEl);
@@ -26,8 +32,14 @@ export default function SimpleListMenu() {
     setAnchorEl(null);
   };
 
+  let guide = (click) => {
+    if (click === 'Videos') { props.setPage('videos') }
+    else if (click === 'Tips & Tricks') { props.setPage('tips') }
+    else if (click === 'Resources') { props.setPage('resources') }
+  }
+
   return (
-    <div>
+    <div >
       <List
         component="nav"
         aria-label="Device settings"
@@ -61,7 +73,10 @@ export default function SimpleListMenu() {
             key={option}
             disabled={index === 0}
             selected={index === selectedIndex}
-            onClick={(event) => handleMenuItemClick(event, index)}
+            onClick={(event) => {
+              handleMenuItemClick(event, index);
+              guide(option);
+            }}
           >
             {option}
           </MenuItem>
