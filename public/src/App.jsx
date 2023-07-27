@@ -7,6 +7,7 @@ import Footer from './components/footer.jsx';
 import Mission from './components/mission.jsx';
 import About from './components/about.jsx';
 import TipsTricks from './components/tipstricks.jsx';
+import Resources from './components/resources.jsx';
 
 import { Box, Typography, AppBar, Toolbar, Button, IconButton, Link } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -71,7 +72,7 @@ const App = () => {
       }
       {page === 'resources' ?
         <div>
-          resources placeholder
+          <Resources/>
         </div>
         : null
       }

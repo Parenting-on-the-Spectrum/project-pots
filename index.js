@@ -14,8 +14,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/dist/index.html'));
 });
 
-
-
 app.get('/bundle.js', (req, res) => {
   res.sendFile(path.join(__dirname, './public/dist/bundle.js'));
 });
@@ -23,7 +21,6 @@ app.get('/bundle.js', (req, res) => {
 app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, './public/dist/index.html'));
 });
-
 
 app.get('/leaders', (req, res) => {
   axios.get(`${process.env.API}/leaders`)
