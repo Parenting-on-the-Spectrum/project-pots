@@ -45,6 +45,16 @@ app.get('/tipstricks', (req, res) => {
   })
 })
 
+app.get('/resources', (req, res) => {
+  axios.get(`${process.env.API}/resources`)
+  .then((resource) => {
+    res.send(resource.data).status(201)
+  })
+  .catch((err) => {
+    res.sendStatus(500);
+  })
+})
+
 // server listens on designated port
 app.listen(process.env.PORT, () => {
   console.log(`App listening on port ${process.env.PORT}`)
