@@ -9,8 +9,8 @@ const Resources = (props) => {
 
   return (
     <div>
-      <Providers/>
-      <Community/>
+      <Providers providers={props.resources.providers}/>
+      <Community community={props.resources.community}/>
     </div>
 
   )
