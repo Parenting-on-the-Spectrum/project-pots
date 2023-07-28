@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Typography, Modal, Box } from "@mui/material";
 
-const Resources = (props) => {
-
+const Providers = (props) => {
+  console.log('providers', props)
   return (
     <div>
-      Resources
+      Providers
     </div>
 
   )
 }
 
-export default Resources;
+export default Providers;

@@ -18,6 +18,7 @@ const App = () => {
   const [page, setPage] = useState('home');
   const [leaders, setLeaders] = useState([]);
   const [tipTrick, setTipTrick] = useState([]);
+  const [rescource, setRescource] = useState([]);
 
   let leads = () => {
     axios.get('/leaders')
@@ -35,9 +36,17 @@ const App = () => {
       .catch((err) => err.stack)
   }
 
+  let recs = () => {
+    axios.get('/resources')
+      .then((info) => {
+        setRescource(info.data);
+      })
+      .catch((err) => err.stack)
+  }
   useEffect(() => {
     leads();
     tips();
+    recs();
   }, []);
 
   return (
@@ -72,7 +81,7 @@ const App = () => {
       }
       {page === 'resources' ?
         <div>
-          <Resources/>
+          <Resources resources={rescource}/>
         </div>
         : null
       }
