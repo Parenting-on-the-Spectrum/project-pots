@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Typography, Modal, Box } from "@mui/material";
 
 const Providers = (props) => {
-  console.log('providers', props)
+
   return (
     <div>
       Providers
