@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Typography, Modal, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const Mission = (props) => {
 

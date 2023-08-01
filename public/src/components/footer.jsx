@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { Box, Container, Grid, Typography, Button, Modal, Link } from "@mui/material";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 
 const Footer = (props) => {
@@ -63,6 +63,7 @@ const Footer = (props) => {
                       <Link href="#" padding="10px" onClick={() => window.open('https://www.instagram.com/')} underline="hover">{<InstagramIcon/>}</Link>
                       <Link href="#" padding="10px" onClick={() => window.open('https://facebook.com/')} underline="hover">{<FacebookIcon/>}</Link>
                       <Link href="#" padding="10px" onClick={() => window.open('https://twitter.com/')} underline="hover">{<TwitterIcon/>}</Link>
+                      <Link href="#" padding="10px" onClick={() => window.open('https://www.linkedin.com/')} underline="hover">{<LinkedInIcon/>}</Link>
                   </Typography>
                 </Box>
               </Modal>

@@ -9,7 +9,7 @@ import About from './components/people/about.jsx';
 import TipsTricks from './components/tips/tipstricks.jsx';
 import Resources from './components/recComps/resources.jsx';
 
-import { Box, Typography, AppBar, Toolbar, Button, IconButton, Link } from "@mui/material";
+import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 
 import logo from './copy.jpeg';
