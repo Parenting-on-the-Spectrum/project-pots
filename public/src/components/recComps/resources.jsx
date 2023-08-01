@@ -1,19 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Typography, Modal, Box } from "@mui/material";
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import Providers from './providers.jsx';
-import Community from './community.jsx';
+import Community from './community.jsx'
 
-const Resources = (props) => {
-
+export default function BasicAccordion(props) {
   return (
     <div>
-      <Providers providers={props.resources.providers}/>
-      <Community community={props.resources.community}/>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Providers</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Providers providers={props.resources.providers}/>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>Community Resources</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <Community community={props.resources.community}/>
+        </AccordionDetails>
+      </Accordion>
     </div>
-
-  )
+  );
 }
-
-export default Resources;

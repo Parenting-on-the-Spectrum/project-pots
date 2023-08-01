@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Typography, Modal, Box } from "@mui/material";
+import React from 'react';
+import { Typography } from "@mui/material";
+import Link from '@mui/material/Link';
 
 const Providers = (props) => {
 
   return (
     <div>
-      {props.name}, {props.link}, {props.location}
+      <Typography color="text.secondary">
+        <Link href={props.link}>{props.name} | {props.location}</Link>
+      </Typography>
     </div>
 
   )

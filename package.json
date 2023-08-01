@@ -7,7 +7,7 @@
     "test": "jest",
     "client-dev": "webpack --watch",
     "start": "nodemon ./index.js",
-    "docker-build": "webpack && node ./server/index.js"
+    "deployment": "webpack --watch && nodemon ./index.js"
   },
   "repository": {
     "type": "git",
