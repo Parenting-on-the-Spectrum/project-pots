@@ -2,16 +2,19 @@ import React from 'react';
 import { Typography } from "@mui/material";
 import Link from '@mui/material/Link';
 
-const Providers = (props) => {
+const SingleCommunity = (props) => {
 
   return (
     <div>
       <Typography color="text.secondary">
-        <Link href={props.link}>{props.name} | {props.location}</Link>
+        <Link href="#" onClick={() => {
+          window.open(props.link)
+        }}>
+          {props.name} | {props.location} </Link>
       </Typography>
     </div>
 
   )
 }
 
-export default Providers;
+export default SingleCommunity;
