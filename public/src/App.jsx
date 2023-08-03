@@ -11,14 +11,18 @@ import Resources from './components/recComps/resources.jsx';
 
 import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import logo from './copy.jpeg';
 
 const App = () => {
+
   const [page, setPage] = useState('home');
   const [leaders, setLeaders] = useState([]);
   const [tipTrick, setTipTrick] = useState([]);
   const [rescource, setRescource] = useState([]);
+  const [mode, setMode] = useState('dark')
 
   let leads = () => {
     axios.get('/leaders')
@@ -49,48 +53,57 @@ const App = () => {
     recs();
   }, []);
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+
   return (
     <div>
-      <img src={logo} className="logo" onClick={(e) => { e.preventDefault(); setPage('home') }}></img>
-      {page === 'home' ?
-        <div>
-          <Header setPage={setPage} />
-          <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
-            Welcome!
-          </Typography>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <img src={logo} className="logo" onClick={(e) => { e.preventDefault(); setPage('home') }}></img>
+        {page === 'home' ?
+          <div>
+            <Header setPage={setPage} setMode={setMode} mode={mode}/>
+            <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
+              Welcome!
+            </Typography>
 
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
-            We are Parenting on the Spectrum
-          </Typography>
-          <Mission />
-          <Footer setPage={setPage} />
-        </div>
-        : null
-      }
-      {page === 'about' ?
-        <div>
-          <About people={leaders} />
-        </div>
-        : null
-      }
-      {page === 'tips' ?
-        <div>
-          <TipsTricks tips={tipTrick} />
-        </div>
-        : null
-      }
-      {page === 'resources' ?
-        <div>
-          <Resources resources={rescource}/>
-        </div>
-        : null
-      }
-      {page === 'videos' ?
-        <div>
-          videos placeholder
-        </div>
-        : null
-      }
+            <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
+              We are Parenting on the Spectrum
+            </Typography>
+            <Mission />
+            <Footer setPage={setPage} />
+          </div>
+          : null
+        }
+        {page === 'about' ?
+          <div>
+            <About people={leaders} />
+          </div>
+          : null
+        }
+        {page === 'tips' ?
+          <div>
+            <TipsTricks tips={tipTrick} />
+          </div>
+          : null
+        }
+        {page === 'resources' ?
+          <div>
+            <Resources resources={rescource} />
+          </div>
+          : null
+        }
+        {page === 'videos' ?
+          <div>
+            videos placeholder
+          </div>
+          : null
+        }
+      </ThemeProvider>
     </div>
   )
 
