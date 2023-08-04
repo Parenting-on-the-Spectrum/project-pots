@@ -14,9 +14,9 @@ const Toggle = (props) => {
   return (
     <div>
       {props.mode === 'light' ?
-        <NightsStayIcon onClick={setter} />
+        <Typography>Change Mode: <NightsStayIcon onClick={setter} /></Typography>
         :
-        <LightModeIcon onClick={setter} />
+        <Typography>Change Mode: <LightModeIcon onClick={setter} /></Typography>
       }
     </div>
   )
