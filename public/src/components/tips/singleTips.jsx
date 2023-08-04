@@ -43,7 +43,7 @@ const SingleTips = (props) => {
             </ExpandMore>
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <Typography fontSize="1.1rem" color="black">
+            <Typography fontSize="1.1rem">
               {props.info}
             </Typography></Collapse>
         </CardContent>
