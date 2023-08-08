@@ -8,6 +8,8 @@ import Mission from './components/mission.jsx';
 import About from './components/people/about.jsx';
 import TipsTricks from './components/tips/tipstricks.jsx';
 import Resources from './components/recComps/resources.jsx';
+import KidVideos from './components/vidComps/kidVideos.jsx';
+import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
 
 import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -97,9 +99,15 @@ const App = () => {
           </div>
           : null
         }
-        {page === 'videos' ?
+        {page === 'videos for kids' ?
           <div>
-            videos placeholder
+            <KidVideos/>
+          </div>
+          : null
+        }
+                {page === 'videos for caregivers' ?
+          <div>
+            <CaregiverVideos/>
           </div>
           : null
         }
