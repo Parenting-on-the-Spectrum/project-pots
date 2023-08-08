@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // jsx components go here
-import Header from './components/header.jsx';
+import Header from './components/header/header.jsx';
 import Footer from './components/footer.jsx';
 import Mission from './components/mission.jsx';
 import About from './components/people/about.jsx';
