@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import singleKidVid from './singleKidVid.jsx';
+import SingleKidVid from './singleKidVid.jsx';
 
 const KidVideos = (props) => {
+  var counter = 0;
 
   return (
     <div >
-    {/* {props.tips.map((t) => (
-      <SingleTips title={t.title} info={t.info} key={t._id} />
-    ))} */}
-    Kids
+    {props.kids.map((k) => (
+      <SingleKidVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
+      title={k.snippet.title} key={counter++} />
+    ))}
   </div>
   )
 }
