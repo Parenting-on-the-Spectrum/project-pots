@@ -52,12 +52,17 @@ app.get('/resources', (req, res) => {
   })
 })
 
-app.get('/videos', (req, res) => {
-  axios.get(`${process.env.API}/videos`)
+app.get('/kideos', (req, res) => {
+  axios.get('https://www.googleapis.com/youtube/v3/search', {params: {
+    q: 'ms. rachel',
+    part: 'snippet',
+    key: `${process.env.YT_KEY}`
+  }})
   .then((vids) => {
-    res.send(vids.data).status(201)
+    res.send(vids.data.items).status(200)
   })
   .catch((err) => {
+    console.log(err.message)
     res.sendStatus(500);
   })
 })

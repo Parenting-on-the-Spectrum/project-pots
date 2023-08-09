@@ -24,7 +24,8 @@ const App = () => {
   const [leaders, setLeaders] = useState([]);
   const [tipTrick, setTipTrick] = useState([]);
   const [rescource, setRescource] = useState([]);
-  const [mode, setMode] = useState('dark')
+  const [mode, setMode] = useState('dark');
+  const [kids, setKids] = useState([]);
 
   let leads = () => {
     axios.get('/leaders')
@@ -49,10 +50,20 @@ const App = () => {
       })
       .catch((err) => err.stack)
   }
+
+  let kidVidFetch = () => {
+    axios.get('/kideos')
+      .then((snips) => {
+        setKids(snips.data);
+      })
+      .catch((err) => err.stack)
+  }
+
   useEffect(() => {
     leads();
     tips();
     recs();
+    kidVidFetch();
   }, []);
 
   const darkTheme = createTheme({
@@ -101,7 +112,7 @@ const App = () => {
         }
         {page === 'videos for kids' ?
           <div>
-            <KidVideos/>
+            <KidVideos kids={kids}/>
           </div>
           : null
         }
