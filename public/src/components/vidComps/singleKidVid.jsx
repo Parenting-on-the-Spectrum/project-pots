@@ -5,7 +5,9 @@ const SingleKidVid = (props) => {
 
   return (
     <div >
-    Kids
+    {props.title}
+    {props.description}
+    <img src={props.thumbnails.medium.url}></img>
   </div>
   )
 }
