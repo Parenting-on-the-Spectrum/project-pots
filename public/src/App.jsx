@@ -1,6 +1,7 @@
 // react components and functions go here
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Routes, Route } from "react-router-dom";
 // jsx components go here
 import Header from './components/header/header.jsx';
 import Footer from './components/footer.jsx';
@@ -71,6 +72,15 @@ const App = () => {
       mode: mode,
     },
   });
+
+  /*
+  use this template for routing:
+  path would be the name of the path. App shout be a root, which is '/'
+  <Routes>
+    <Route path='/'/>
+    <Route path'/nameofpath' element={<Component />}/>
+  </Routes>
+  */
 
   return (
     <div>
