@@ -122,10 +122,14 @@ const App = () => {
         }
       </ThemeProvider>
 
-      {/* <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/about" element={<About people={leaders} />} />
-      </Routes> */}
+      {/* <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/aboutPage" element={<About people={leaders} />} />
+          <Route path="/kidVideosPage" element={<KidVideos kids={kids} />} />
+        </Routes>
+      </ ThemeProvider> */}
 
     </div>
   )
