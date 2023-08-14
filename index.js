@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+/////////////////// REACT ROUTER PATHS ///////////////////
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/dist/index.html'));
 });
@@ -21,7 +22,15 @@ app.get('/', function(req, res) {
   })
 })
 
-app.get('/about', function(req, res) {
+app.get('/aboutPage', function(req, res) {
+  res.sendFile(path.join(__dirname, './public/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+app.get('/kidVideosPage', function(req, res) {
   res.sendFile(path.join(__dirname, './public/dist/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
@@ -36,6 +45,9 @@ app.get('/bundle.js', (req, res) => {
 app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, './public/dist/index.html'));
 });
+
+
+/////////////////// SERVER PATHS  ///////////////////
 
 app.get('/leaders', (req, res) => {
   axios.get(`${process.env.API}/leaders`)
