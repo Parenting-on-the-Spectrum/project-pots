@@ -11,6 +11,7 @@ import TipsTricks from './components/tips/tipstricks.jsx';
 import Resources from './components/recComps/resources.jsx';
 import KidVideos from './components/vidComps/kidVideos.jsx';
 import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
+import Main from './components/main.jsx';
 
 import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -67,20 +68,13 @@ const App = () => {
     kidVidFetch();
   }, []);
 
+  console.log(leaders)
+
   const darkTheme = createTheme({
     palette: {
       mode: mode,
     },
   });
-
-  /*
-  use this template for routing:
-  path would be the name of the path. App shout be a root, which is '/'
-  <Routes>
-    <Route path='/'/>
-    <Route path'/nameofpath' element={<Component />}/>
-  </Routes>
-  */
 
   return (
     <div>
@@ -99,12 +93,6 @@ const App = () => {
             </Typography>
             <Mission />
             <Footer setPage={setPage} />
-          </div>
-          : null
-        }
-        {page === 'about' ?
-          <div>
-            <About people={leaders} />
           </div>
           : null
         }
@@ -133,6 +121,12 @@ const App = () => {
           : null
         }
       </ThemeProvider>
+
+      {/* <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/about" element={<About people={leaders} />} />
+      </Routes> */}
+
     </div>
   )
 

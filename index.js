@@ -13,7 +13,15 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/dist/index.html'));
 });
-app.get('/*', function(req, res) {
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, './public/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+app.get('/about', function(req, res) {
   res.sendFile(path.join(__dirname, './public/dist/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
