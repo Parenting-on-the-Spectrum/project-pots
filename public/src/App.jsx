@@ -78,7 +78,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <img src={logo} className="logo" onClick={(e) => { e.preventDefault(); setPage('home') }}></img>
         {page === 'home' ?
@@ -120,9 +120,9 @@ const App = () => {
           </div>
           : null
         }
-      </ThemeProvider> */}
+      </ThemeProvider>
 
-      <ThemeProvider theme={darkTheme}>
+      {/* <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Routes>
           <Route path="/" element={<Main />} />
@@ -130,7 +130,7 @@ const App = () => {
           <Route path="/kidVideosPage" element={<KidVideos kids={kids} />} />
           <Route path="/resourcePage" element={<Resources resources={rescource} />} />
         </Routes>
-      </ ThemeProvider>
+      </ ThemeProvider> */}
 
     </div>
   )
