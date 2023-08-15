@@ -68,7 +68,7 @@ const App = () => {
     kidVidFetch();
   }, []);
 
-  console.log(leaders)
+  console.log(rescource)
 
   const darkTheme = createTheme({
     palette: {
@@ -128,6 +128,7 @@ const App = () => {
           <Route path="/" element={<Main />} />
           <Route path="/aboutPage" element={<About people={leaders} />} />
           <Route path="/kidVideosPage" element={<KidVideos kids={kids} />} />
+          <Route path="/resourcePage" element={<Resources resources={rescource} />} />
         </Routes>
       </ ThemeProvider> */}
 
