@@ -34,12 +34,14 @@ export default function SimpleListMenu(props) {
     setAnchorEl(null);
   };
 
+  ////////////////////////////////DELETE///////////////////////////////////////
   let guide = (click) => {
     if (click === 'Videos for Kids') { props.setPage('videos for kids') }
     else if (click === 'Videos for Caregivers') { props.setPage('videos for caregivers') }
     else if (click === 'Tips & Tricks') { props.setPage('tips') }
     else if (click === 'Resources') { props.setPage('resources') }
   }
+  ////////////////////////////////DELETE///////////////////////////////////////
 
   return (
     <div >
@@ -78,7 +80,9 @@ export default function SimpleListMenu(props) {
             selected={index === selectedIndex}
             onClick={(event) => {
               handleMenuItemClick(event, index);
+  ////////////////////////////////DELETE///////////////////////////////////////
               guide(option);
+  ////////////////////////////////DELETE///////////////////////////////////////
             }}
           >
             {option}

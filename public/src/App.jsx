@@ -21,8 +21,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import logo from './copy.jpeg';
 
 const App = () => {
-
   const [page, setPage] = useState('home');
+
   const [leaders, setLeaders] = useState([]);
   const [tipTrick, setTipTrick] = useState([]);
   const [rescource, setRescource] = useState([]);
@@ -68,8 +68,6 @@ const App = () => {
     kidVidFetch();
   }, []);
 
-  console.log(rescource)
-
   const darkTheme = createTheme({
     palette: {
       mode: mode,
@@ -87,7 +85,6 @@ const App = () => {
             <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
               Welcome!
             </Typography>
-
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
               We are Parenting on the Spectrum
             </Typography>
@@ -124,12 +121,18 @@ const App = () => {
 
       {/* <ThemeProvider theme={darkTheme}>
         <CssBaseline />
+        <center><a href="/"><img src={logo} display="flex-center"
+        justify-content="center" style={{width:'25%', height:'25%'}}></img></a></center>
+
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/aboutPage" element={<About people={leaders} />} />
           <Route path="/kidVideosPage" element={<KidVideos kids={kids} />} />
           <Route path="/resourcePage" element={<Resources resources={rescource} />} />
+          <Route path="/tipsPage" element={<TipsTricks tips={tipTrick} />} />
+          <Route path="/caregiverPage" element={<CaregiverVideos/>} />
         </Routes>
+
       </ ThemeProvider> */}
 
     </div>
