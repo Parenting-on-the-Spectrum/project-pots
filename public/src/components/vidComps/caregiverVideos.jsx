@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import singleKidVid from './singleKidVid.jsx';
 import singleCareVid from './singleCareVid.jsx';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const CareGiverVideos = (props) => {
 
@@ -15,3 +16,10 @@ const CareGiverVideos = (props) => {
 }
 
 export default CareGiverVideos;
+/*
+    props.PROP_NAME_HERE.length === 0 ?
+      <Box sx={{ display: 'flex' }}>
+        <CircularProgress />
+      </Box>
+      :
+*/
