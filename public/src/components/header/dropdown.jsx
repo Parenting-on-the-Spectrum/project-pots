@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { List, ListItem, ListItemText, MenuItem, Menu } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from '@mui/material/Link';
 
 const options = [
   'Menu',
-  'Videos for Kids',
-  'Videos for Caregivers',
-  'Tips & Tricks',
-  'Resources'
+  (<Link color="inherit" underline="none" href="/kidVideosPage">Videos for Kids</Link>),
+  (<Link color="inherit" underline="none" href="/caregiverPage">Videos for Caregivers</Link>),
+  (<Link color="inherit" underline="none" href="/tipsPage">Tips & Tricks</Link>),
+  (<Link color="inherit" underline="none" href="/resourcePage">Resources</Link>)
 ];
+
+let key = 0;
 
 const dropSets = [
   'videos for kids',
@@ -75,11 +78,12 @@ export default function SimpleListMenu(props) {
       >
         {options.map((option, index) => (
           <MenuItem
-            key={option}
+            key={key++}
             disabled={index === 0}
             selected={index === selectedIndex}
             onClick={(event) => {
               handleMenuItemClick(event, index);
+              console.log(option)
   ////////////////////////////////DELETE///////////////////////////////////////
               guide(option);
   ////////////////////////////////DELETE///////////////////////////////////////
