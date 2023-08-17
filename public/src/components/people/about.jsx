@@ -4,9 +4,8 @@ import Individual from './individual.jsx';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-const About = (props) => {
-  return (
-    props.resources.length === 0 ?
+const About = (props) => (
+    props.people.length === 0 ?
       <Box sx={{ display: 'flex' }}>
         <CircularProgress />
       </Box>
@@ -17,6 +16,6 @@ const About = (props) => {
         ))}
       </div>
   )
-}
+
 
 export default About;

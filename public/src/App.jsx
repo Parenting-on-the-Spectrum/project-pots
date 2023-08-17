@@ -12,6 +12,7 @@ import Resources from './components/recComps/resources.jsx';
 import KidVideos from './components/vidComps/kidVideos.jsx';
 import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
 import Main from './components/main.jsx';
+import Toggle from './components/header/toggle.jsx'
 
 import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -76,12 +77,12 @@ const App = () => {
 
   return (
     <div>
-      <ThemeProvider theme={darkTheme}>
+      {/* <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <img src={logo} className="logo" onClick={(e) => { e.preventDefault(); setPage('home') }}></img>
         {page === 'home' ?
           <div>
-            <Header setPage={setPage} setMode={setMode} mode={mode}/>
+            <Header setPage={setPage} setMode={setMode} mode={mode} />
             <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
               Welcome!
             </Typography>
@@ -107,33 +108,39 @@ const App = () => {
         }
         {page === 'videos for kids' ?
           <div>
-            <KidVideos kids={kids}/>
+            <KidVideos kids={kids} />
           </div>
           : null
         }
-                {page === 'videos for caregivers' ?
+        {page === 'videos for caregivers' ?
           <div>
-            <CaregiverVideos/>
+            <CaregiverVideos />
           </div>
           : null
         }
-      </ThemeProvider>
+        {page === 'about' ?
+          <div>
+            <About people={leaders} />
+          </div>
+          : null
+        }
+      </ThemeProvider> */}
 
-      {/* <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <center><a href="/"><img src={logo} display="flex-center"
-        justify-content="center" style={{width:'25%', height:'25%'}}></img></a></center>
-
+          justify-content="center" style={{ width: '25%', height: '25%' }}></img></a></center>
+        <Toggle mode={mode} setMode={setMode} />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/aboutPage" element={<About people={leaders} />} />
           <Route path="/kidVideosPage" element={<KidVideos kids={kids} />} />
           <Route path="/resourcePage" element={<Resources resources={rescource} />} />
           <Route path="/tipsPage" element={<TipsTricks tips={tipTrick} />} />
-          <Route path="/caregiverPage" element={<CaregiverVideos/>} />
+          <Route path="/caregiverPage" element={<CaregiverVideos />} />
         </Routes>
 
-      </ ThemeProvider> */}
+      </ ThemeProvider>
 
     </div>
   )

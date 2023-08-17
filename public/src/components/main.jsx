@@ -23,8 +23,6 @@ const Main = () => {
 
   return (
     <div>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
         <Header />
         <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
           Welcome!
@@ -34,7 +32,6 @@ const Main = () => {
         </Typography>
         <Mission />
         <Footer />
-      </ThemeProvider>
     </div>
   )
 

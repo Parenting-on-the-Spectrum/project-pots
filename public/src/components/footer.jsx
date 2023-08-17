@@ -5,7 +5,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-
 const Footer = (props) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -47,7 +46,7 @@ const Footer = (props) => {
           </Grid>
           <Grid item xs={12}>
             <Typography color="textSecondary" variant="subtitle1" align="center">
-              <Button color="inherit" onClick={(e) => pageClick(e, 'about')}>About Us</Button>
+              <Link color="inherit" underline="none" href="/aboutPage">About Us</Link>
               <Button color="inherit" onClick={handleOpen}>Follow Us</Button>
               <Modal
                 open={open}

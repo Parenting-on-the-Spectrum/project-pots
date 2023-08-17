@@ -1,9 +1,6 @@
 import React from 'react';
 import DropDown from './dropdown.jsx';
 import { Box, Typography, AppBar, Toolbar, Button, IconButton } from "@mui/material";
-import Switch from '@mui/material/Switch';
-
-import Toggle from './toggle.jsx';
 
 const Header = (props) => {
 
@@ -25,8 +22,6 @@ const Header = (props) => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Info
             </Typography>
-            <Toggle mode={props.mode} setMode={props.setMode} />
-            {/* <Button color="inherit">Login?</Button> */}
           </Toolbar>
         </AppBar>
       </Box>
