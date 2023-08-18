@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -12,8 +13,24 @@ import Providers from './providers.jsx';
 import Community from './community.jsx'
 
 export default function BasicAccordion(props) {
+  const [commune, setCommune] = useState([]);
+  const [provide, setProvide] = useState([]);
+
+  const recs = () => {
+    axios.get('/resources')
+      .then((info) => {
+        setCommune(info.data.community);
+        setProvide(info.data.providers);
+      })
+      .catch((err) => err.stack)
+  }
+
+  useEffect(() => {
+    recs();
+  }, []);
+
   return (
-    props.resources.length === 0 ?
+    (commune.length === 0 && provide.length === 0) ?
       <Box sx={{ display: 'flex' }}>
         <CircularProgress />
       </Box>
@@ -27,7 +44,7 @@ export default function BasicAccordion(props) {
             <Typography>Providers</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Providers providers={props.resources.providers} />
+            <Providers providers={provide} />
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -39,7 +56,7 @@ export default function BasicAccordion(props) {
             <Typography>Community Resources</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Community community={props.resources.community} />
+            <Community community={commune} />
           </AccordionDetails>
         </Accordion>
       </div>

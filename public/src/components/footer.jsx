@@ -10,11 +10,6 @@ const Footer = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  let pageClick = (e, page) => {
-    e.preventDefault();
-    props.setPage(page)
-  }
-
   const style = {
     position: 'absolute',
     top: '50%',
@@ -56,13 +51,13 @@ const Footer = (props) => {
               >
                 <Box sx={style}>
                   <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Follow us on social media!
+                    Follow us on social media!
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      <Link href="#" padding="10px" onClick={() => window.open('https://www.instagram.com/')} underline="hover">{<InstagramIcon/>}</Link>
-                      <Link href="#" padding="10px" onClick={() => window.open('https://facebook.com/')} underline="hover">{<FacebookIcon/>}</Link>
-                      <Link href="#" padding="10px" onClick={() => window.open('https://twitter.com/')} underline="hover">{<TwitterIcon/>}</Link>
-                      <Link href="#" padding="10px" onClick={() => window.open('https://www.linkedin.com/')} underline="hover">{<LinkedInIcon/>}</Link>
+                    <Link href="#" padding="10px" onClick={() => window.open('https://www.instagram.com/')} underline="hover">{<InstagramIcon />}</Link>
+                    <Link href="#" padding="10px" onClick={() => window.open('https://facebook.com/')} underline="hover">{<FacebookIcon />}</Link>
+                    <Link href="#" padding="10px" onClick={() => window.open('https://twitter.com/')} underline="hover">{<TwitterIcon />}</Link>
+                    <Link href="#" padding="10px" onClick={() => window.open('https://www.linkedin.com/')} underline="hover">{<LinkedInIcon />}</Link>
                   </Typography>
                 </Box>
               </Modal>

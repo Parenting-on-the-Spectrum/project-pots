@@ -3,7 +3,6 @@ import DropDown from './dropdown.jsx';
 import { Box, Typography, AppBar, Toolbar, Button, IconButton } from "@mui/material";
 
 const Header = (props) => {
-
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
@@ -15,7 +14,6 @@ const Header = (props) => {
               color="inherit"
               aria-label="menu"
               sx={{ mr: 2 }}
-
             >
               <DropDown setPage={props.setPage} />
             </IconButton>

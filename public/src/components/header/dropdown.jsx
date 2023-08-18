@@ -13,13 +13,6 @@ const options = [
 
 let key = 0;
 
-const dropSets = [
-  'videos for kids',
-  'videos for caregivers',
-  'tips',
-  'resources'
-]
-
 export default function SimpleListMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -36,15 +29,6 @@ export default function SimpleListMenu(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  ////////////////////////////////DELETE///////////////////////////////////////
-  let guide = (click) => {
-    if (click === 'Videos for Kids') { props.setPage('videos for kids') }
-    else if (click === 'Videos for Caregivers') { props.setPage('videos for caregivers') }
-    else if (click === 'Tips & Tricks') { props.setPage('tips') }
-    else if (click === 'Resources') { props.setPage('resources') }
-  }
-  ////////////////////////////////DELETE///////////////////////////////////////
 
   return (
     <div >
@@ -83,10 +67,6 @@ export default function SimpleListMenu(props) {
             selected={index === selectedIndex}
             onClick={(event) => {
               handleMenuItemClick(event, index);
-              console.log(option)
-  ////////////////////////////////DELETE///////////////////////////////////////
-              guide(option);
-  ////////////////////////////////DELETE///////////////////////////////////////
             }}
           >
             {option}
