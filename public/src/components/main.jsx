@@ -20,18 +20,17 @@ const darkTheme = createTheme({
 });
 
 const Main = () => {
-
   return (
     <div>
-        <Header />
-        <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
-          Welcome!
-        </Typography>
-        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
-          We are Parenting on the Spectrum
-        </Typography>
-        <Mission />
-        <Footer />
+      <Header />
+      <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
+        Welcome!
+      </Typography>
+      <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
+        We are Parenting on the Spectrum
+      </Typography>
+      <Mission />
+      <Footer />
     </div>
   )
 

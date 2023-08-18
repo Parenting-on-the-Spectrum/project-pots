@@ -5,10 +5,14 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
 const Toggle = (props) => {
-
   const setter = () => {
-    if (props.mode === 'light') { props.setMode('dark') }
-    else if (props.mode === 'dark') { props.setMode('light') }
+    if (props.mode === 'light') {
+      localStorage.setItem('theme', 'dark') ;
+      props.setMode(localStorage.getItem('theme'));
+    } else if (props.mode === 'dark') {
+      localStorage.setItem('theme', 'light')
+      props.setMode(localStorage.getItem('theme'));
+    }
   }
 
   return (
