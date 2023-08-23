@@ -1,16 +1,8 @@
 module.exports = {
-  globals: {
-    NODE_ENV: "test"
-  },
   moduleNameMapper: {
-    "^Components/(.+)$": "<rootDir>/src/components/$1",
-    "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
-    "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      './public/src/',
+    '\\.(css|less)$': 'identity-obj-proxy',
   },
-  moduleDirectories: ["node_modules", 'src'],
-  moduleFileExtensions: ["js", "jsx", "json"],
-  // transform: {
-  //   "^.+\\.tsx?$": "ts-jest"
-  // },
-  verbose: true
+  "testEnvironment": "jsdom"
 };
