@@ -4,8 +4,10 @@
 
 import React from 'react';
 import { render, screen, getByText } from '@testing-library/react';
-// import '@testing-library/jest-dom';
+import '@testing-library/jest-dom';
+import About from './components/people/about.jsx';
 import Mission from './components/mission.jsx';
+import Footer from './components/footer.jsx';
 
 describe("Example tests", function () {
 
@@ -27,17 +29,17 @@ describe("Page tests", function () {
   });
 
   test('Mission renders', () => {
-    /*
     render(<Mission />);
-    console.log(screen.getByText(/complexities/))
-
-    expect(screen.getByText(/complexities/).includes()).toEqual(true);
     expect(screen.getByText(/complexities/)).toBeInTheDocument();
-    npm i --save-dev @testing-library/jest-dom
-    */
+  });
 
-   let texts = Mission().props.children[0].props.children;
-   expect(texts.includes('Parenting')).toEqual(true);
+  test("About loads up as a function", () => {
+    expect(typeof About).toBe('function')
+  });
+
+  test("Footer", () => {
+    render(<Footer />);
+    expect(screen.getByText(/Who/)).toBeInTheDocument();
   });
 
 });
