@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage",
     "client-dev": "webpack --watch",
     "start": "nodemon ./index.js",
     "deployment": "webpack --watch && nodemon ./index.js"
@@ -41,6 +42,7 @@
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-react": "^7.22.3",
+    "@testing-library/jest-dom": "^6.1.0",
     "babel-loader": "^9.1.2",
     "jest-environment-jsdom": "^29.6.3",
     "react": "^18.2.0",
