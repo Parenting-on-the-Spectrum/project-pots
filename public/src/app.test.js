@@ -42,4 +42,12 @@ describe("Page tests", function () {
     expect(screen.getByText(/Who/)).toBeInTheDocument();
   });
 
+  test("Empty catch for loading progressbar", async () => {
+    render(<About />);
+    await screen.findAllByRole("progressbar")
+    .then((data) => {
+      expect(data.length).toBeGreaterThan(0);
+    })
+  });
+
 });
