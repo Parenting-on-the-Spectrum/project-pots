@@ -26,7 +26,7 @@ const KidVideos = (props) => {
         <CircularProgress />
       </Box>
       :
-      <div >
+      <div display="flex">
         {kids.map((k) => (
           <SingleKidVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
             title={k.snippet.title} key={counter++} />
