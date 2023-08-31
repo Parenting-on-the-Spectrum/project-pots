@@ -11,7 +11,7 @@ const KidVideos = (props) => {
   let kidVidFetch = () => {
     axios.get('/kideos')
       .then((snips) => {
-        setKids(snips.data);
+        setKids(snips.data.slice(1));
       })
       .catch((err) => err.stack)
   }
@@ -29,7 +29,7 @@ const KidVideos = (props) => {
       <div display="flex">
         {kids.map((k) => (
           <SingleKidVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
-            title={k.snippet.title} key={counter++} />
+            title={k.snippet.title} key={counter++} id={k.id.videoId}/>
         ))}
       </div>
   )
