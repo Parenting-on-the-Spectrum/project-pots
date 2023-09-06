@@ -76,7 +76,7 @@ app.get('/index.html', (req, res) => {
 app.get('/leaders', (req, res) => {
   axios.get(`${process.env.API}/leaders`)
   .then((leaders) => {
-    res.send(leaders.data).status(201)
+    res.status(200).send(leaders.data)
   })
   .catch((err) => {
     res.sendStatus(500);
@@ -86,7 +86,7 @@ app.get('/leaders', (req, res) => {
 app.get('/tipstricks', (req, res) => {
   axios.get(`${process.env.API}/tipstricks`)
   .then((tips) => {
-    res.send(tips.data).status(201)
+    res.status(200).send(tips.data)
   })
   .catch((err) => {
     res.sendStatus(500);
@@ -96,7 +96,7 @@ app.get('/tipstricks', (req, res) => {
 app.get('/resources', (req, res) => {
   axios.get(`${process.env.API}/resources`)
   .then((resource) => {
-    res.send(resource.data).status(201)
+    res.status(200).send(resource.data)
   })
   .catch((err) => {
     res.sendStatus(500);
@@ -106,7 +106,17 @@ app.get('/resources', (req, res) => {
 app.get('/kideos', (req, res) => {
   axios.get(`${process.env.API}/kideos`)
   .then((vids) => {
-    res.send(vids.data).status(200);
+    res.status(200).send(vids.data);
+  })
+  .catch((err) => {
+    res.sendStatus(500);
+  })
+})
+
+app.get('/careVids', (req, res) => {
+  axios.get(`${process.env.API}/careVids`)
+  .then((vids) => {
+    res.status(200).send(vids.data);
   })
   .catch((err) => {
     res.sendStatus(500);
