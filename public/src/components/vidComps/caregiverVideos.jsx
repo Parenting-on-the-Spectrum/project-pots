@@ -1,25 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import singleCareVid from './singleCareVid.jsx';
+import axios from 'axios';
+import SingleCareVid from './singleCareVid.jsx';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
 const CareGiverVideos = (props) => {
+  const [careVids, setCareVids] = useState([]);
+  var counter = 0;
+
+  let careGivers = () => {
+    axios.get('/careVids')
+      .then((snips) => {
+        setCareVids(snips.data.slice(1));
+      })
+      .catch((err) => err.stack)
+  }
+
+  useEffect(() => {
+    careGivers();
+  }, []);
 
   return (
-    <div >
-    {/* {props.tips.map((t) => (
-      <SingleTips title={t.title} info={t.info} key={t._id} />
-    ))} */}
-    Caregiver
-  </div>
-  )
-}
-
-export default CareGiverVideos;
-/*
-    props.PROP_NAME_HERE.length === 0 ?
+    careVids.length === 0 ?
       <Box sx={{ display: 'flex' }}>
         <CircularProgress />
       </Box>
       :
-*/
+      <div display="flex">
+        {careVids.map((k) => (
+          <SingleCareVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
+            title={k.snippet.title} key={counter++} id={k.id.videoId}/>
+        ))}
+      </div>
+  )
+}
+
+export default CareGiverVideos;
