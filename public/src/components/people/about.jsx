@@ -25,11 +25,11 @@ const About = (props) => {
         <CircularProgress />
       </Box>
       :
-      <div >
+      <Box sx={{ display: 'inline-flex', width: ' 80%' }}>
         {leaders.map((i) => (
           <Individual postnomials={i.postnomials.join(', ')} name={i.name} picture={i.picture} key={i._id} />
         ))}
-      </div>
+      </Box>
   )
 }
 
