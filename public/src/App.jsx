@@ -37,6 +37,7 @@ const App = () => {
         <center><a href="/"><img src={logo} display="flex-center"
           justify-content="center" style={{ width: '25%', height: '25%' }}></img></a></center>
         <Toggle mode={mode} setMode={setMode} />
+        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/aboutPage" element={<About />} />

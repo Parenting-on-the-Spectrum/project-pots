@@ -22,7 +22,6 @@ const darkTheme = createTheme({
 const Main = () => {
   return (
     <div>
-      <Header />
       <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
         Welcome!
       </Typography>

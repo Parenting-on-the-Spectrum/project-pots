@@ -5,6 +5,7 @@ import Link from '@mui/material/Link';
 
 const options = [
   'Menu',
+  (<Link color="inherit" underline="none" href="/">Main</Link>),
   (<Link color="inherit" underline="none" href="/kidVideosPage">Videos for Kids</Link>),
   (<Link color="inherit" underline="none" href="/caregiverPage">Videos for Caregivers</Link>),
   (<Link color="inherit" underline="none" href="/tipsPage">Tips & Tricks</Link>),
