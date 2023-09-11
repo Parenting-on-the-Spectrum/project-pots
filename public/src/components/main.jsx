@@ -11,15 +11,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import logo from '../copy.jpeg';
-
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
 });
 
-const Main = () => {
+const Main = (props) => {
   return (
     <div>
       <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
@@ -28,7 +26,7 @@ const Main = () => {
       <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
         We are Parenting on the Spectrum
       </Typography>
-      <Mission />
+      <Mission pic={props.pic}/>
       <Footer />
     </div>
   )

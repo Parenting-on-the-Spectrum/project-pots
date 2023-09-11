@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography } from "@mui/material";
+import Box from '@mui/material/Box';
+
 
 const Mission = (props) => {
 
@@ -9,6 +11,7 @@ const Mission = (props) => {
   }
 
   return (
+    <Box sx={{display: 'flex'}}>
     <div>
       <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={sizes.pads} align="center">
         Parenting on the Spectrum is a non-profit organization dedicated
@@ -52,9 +55,11 @@ const Mission = (props) => {
         families gain access to a network of compassionate professionals, fellow parents,
         and individuals with lived experiences who are committed to walking this journey together,
         celebrating achievements, and providing unwavering support every step of the way.</Typography>
-
     </div>
-
+    {/* <div>
+      <img src={props.pic} height="500px"></img>
+    </div> */}
+    </Box>
   )
 }
 
