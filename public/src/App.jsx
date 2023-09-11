@@ -19,7 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import logo from './copy.jpeg';
+import logo from './components/images/copy.jpeg';
 
 const App = () => {
   const [mode, setMode] = useState(localStorage.getItem('theme'));

@@ -11,8 +11,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import logo from '../copy.jpeg';
-
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
