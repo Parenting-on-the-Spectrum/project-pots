@@ -17,7 +17,7 @@ const darkTheme = createTheme({
   },
 });
 
-const Main = () => {
+const Main = (props) => {
   return (
     <div>
       <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
@@ -26,7 +26,7 @@ const Main = () => {
       <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
         We are Parenting on the Spectrum
       </Typography>
-      <Mission />
+      <Mission pic={props.pic}/>
       <Footer />
     </div>
   )

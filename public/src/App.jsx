@@ -19,7 +19,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import logo from './components/images/copy.jpeg';
+import logo from './copy.jpeg';
+import pic from './sky.jpeg';
 
 const App = () => {
   const [mode, setMode] = useState(localStorage.getItem('theme'));
@@ -39,7 +40,7 @@ const App = () => {
         <Toggle mode={mode} setMode={setMode} />
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main pic={pic}/>} />
           <Route path="/aboutPage" element={<About />} />
           <Route path="/kidVideosPage" element={<KidVideos />} />
           <Route path="/resourcePage" element={<Resources />} />
