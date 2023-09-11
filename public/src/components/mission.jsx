@@ -56,9 +56,9 @@ const Mission = (props) => {
         and individuals with lived experiences who are committed to walking this journey together,
         celebrating achievements, and providing unwavering support every step of the way.</Typography>
     </div>
-    <div>
+    {/* <div>
       <img src={props.pic} height="500px"></img>
-    </div>
+    </div> */}
     </Box>
   )
 }
