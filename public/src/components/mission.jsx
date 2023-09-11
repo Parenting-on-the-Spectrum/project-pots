@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography } from "@mui/material";
 import Box from '@mui/material/Box';
 
-import pic from './images/sky.jpg'
+import pic from './images/sky.jpeg'
 
 const Mission = (props) => {
 
