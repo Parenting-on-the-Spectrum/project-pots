@@ -19,8 +19,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import logo from './copy.jpeg';
-import pic from './sky.jpeg';
+import logo from './images/copy.jpeg';
+import pic from './images/asd.jpg';
 
 const App = () => {
   const [mode, setMode] = useState(localStorage.getItem('theme'));

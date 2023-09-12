@@ -11,23 +11,30 @@ const Mission = (props) => {
   }
 
   return (
-    <Box sx={{display: 'flex'}}>
-    <div>
-      <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={sizes.pads} align="center">
+    <Box >
+
+<Box sx={{display: 'flex'}}>
+<Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={'40px'} align="center">
         Parenting on the Spectrum is a non-profit organization dedicated
         to providing support and assistance to families with autistic children.
         Our mission is to empower parents and caregivers with the knowledge, resources,
         and community they need to navigate the unique challenges of raising a child on the autism spectrum.
         With a deep understanding of the complexities of autism and a commitment to fostering inclusivity and acceptance,
-        we strive to enhance the lives of both children and their families. </Typography>
+        we strive to enhance the lives of both children and their families.
 
-      <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={sizes.pads} align="center">
         At Parenting on the Spectrum, we recognize that every child on the autism spectrum is unique,
         and we embrace a person-centered approach in our services. We believe in the importance of early intervention,
         personalized support, and evidence-based strategies to optimize each child's development and well-being.
         Our team of experienced professionals, including ABA therapists, psychologists, and educators,
         work collaboratively to design individualized plans and offer comprehensive programs
         that address the specific needs of each family we serve.</Typography>
+        <Box sx={{paddingLeft: '50px'}}>
+      <img src={props.pic} height="400px" style={{borderRadius: "50px"}}></img>
+    </Box>
+</Box>
+
+    <div>
+
 
       <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={sizes.pads} align="center">
         We understand that being a parent or caregiver of a child on the spectrum can be both
@@ -56,9 +63,6 @@ const Mission = (props) => {
         and individuals with lived experiences who are committed to walking this journey together,
         celebrating achievements, and providing unwavering support every step of the way.</Typography>
     </div>
-    {/* <div>
-      <img src={props.pic} height="500px"></img>
-    </div> */}
     </Box>
   )
 }
