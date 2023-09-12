@@ -11,10 +11,12 @@ import Box from '@mui/material/Box';
 
 import Providers from './providers.jsx';
 import Community from './community.jsx'
+import Services from './services.jsx';
 
 export default function BasicAccordion(props) {
   const [commune, setCommune] = useState([]);
   const [provide, setProvide] = useState([]);
+  const [service, setService] = useState([])
 
   const recs = () => {
     axios.get('/resources')
@@ -29,8 +31,14 @@ export default function BasicAccordion(props) {
     recs();
   }, []);
 
+  let lengths = () => {
+    return commune.length === 0
+    && provide.length === 0
+    && service.length === 0;
+  }
+
   return (
-    (commune.length === 0 && provide.length === 0) ?
+    lengths() ?
       <Box sx={{ display: 'flex' }}>
         <CircularProgress />
       </Box>
@@ -57,6 +65,18 @@ export default function BasicAccordion(props) {
           </AccordionSummary>
           <AccordionDetails>
             <Community community={commune} />
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            <Typography>Services</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Services services={service} />
           </AccordionDetails>
         </Accordion>
       </div>
