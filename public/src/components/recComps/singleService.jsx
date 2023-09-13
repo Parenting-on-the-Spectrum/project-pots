@@ -10,7 +10,7 @@ const SingleService = (props) => {
         <Link href="#" onClick={() => {
           window.open(props.link)
         }}>
-          {props.name} | {props.services} </Link>
+          {props.name} | {props.type} </Link>
       </Typography>
     </div>
 
