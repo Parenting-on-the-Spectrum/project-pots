@@ -30,7 +30,7 @@ describe("Page tests", function () {
 
   test('Mission renders', () => {
     render(<Mission />);
-    expect(screen.getByText(/complexities/)).toBeInTheDocument();
+    expect(screen.getByText(/inclusivity/)).toBeInTheDocument();
   });
 
   test("About loads up as a function", () => {
