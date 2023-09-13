@@ -23,6 +23,7 @@ export default function BasicAccordion(props) {
       .then((info) => {
         setCommune(info.data.community);
         setProvide(info.data.providers);
+        setService(info.data.services)
       })
       .catch((err) => err.stack)
   }

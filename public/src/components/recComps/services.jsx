@@ -8,7 +8,7 @@ const Services = (props) => {
   return (
     <div >
       {props.services.map((i) => (
-        <SingleService name={i.name} link={i.link} services={i.services} key={i._id} />
+        <SingleService name={i.name} link={i.link} type={i.type} key={i._id} />
       ))}
     </div>
 
