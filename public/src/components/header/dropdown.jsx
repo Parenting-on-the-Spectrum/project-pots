@@ -3,14 +3,15 @@ import { List, ListItem, ListItemText, MenuItem, Menu } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
 
-const options = [
-  'Menu',
-  (<Link color="inherit" underline="none" href="/">Main</Link>),
-  (<Link color="inherit" underline="none" href="/kidVideosPage">Videos for Kids</Link>),
-  (<Link color="inherit" underline="none" href="/caregiverPage">Videos for Caregivers</Link>),
-  (<Link color="inherit" underline="none" href="/tipsPage">Tips & Tricks</Link>),
-  (<Link color="inherit" underline="none" href="/resourcePage">Resources</Link>)
-];
+const lists = {
+  Main: '/',
+  'Videos for Kids': "/kidVideosPage",
+  'Videos for Caregivers': "/caregiverPage",
+  'Tips & Tricks': "/tipsPage",
+  Resources: "/resourcePage"
+}
+
+const options = ['Menu'].concat(Object.keys(lists))
 
 let key = 0;
 
@@ -67,6 +68,7 @@ export default function SimpleListMenu(props) {
             disabled={index === 0}
             selected={index === selectedIndex}
             onClick={(event) => {
+              window.location.href = lists[option];
               handleMenuItemClick(event, index);
             }}
           >
