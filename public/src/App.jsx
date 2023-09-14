@@ -4,8 +4,6 @@ import axios from 'axios';
 import { Routes, Route } from "react-router-dom";
 // jsx components go here
 import Header from './components/header/header.jsx';
-import Footer from './components/footer.jsx';
-import Mission from './components/mission.jsx';
 import About from './components/people/about.jsx';
 import TipsTricks from './components/tips/tipstricks.jsx';
 import Resources from './components/recComps/resources.jsx';
@@ -13,12 +11,13 @@ import KidVideos from './components/vidComps/kidVideos.jsx';
 import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
 import Main from './components/main.jsx';
 import Toggle from './components/header/toggle.jsx'
-
+import Fade from '@mui/material/Fade';
+// MUI components
 import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
+// pictures
 import logo from './images/copy.jpeg';
 import pic from './images/asd.jpg';
 
@@ -32,11 +31,12 @@ const App = () => {
   });
 
   return (
+    <Fade in={true}>
     <div>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <center><a href="/"><img src={logo} display="flex-center"
-          justify-content="center" style={{ width: '25%', height: '25%' }}></img></a></center>
+          justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
         <Toggle mode={mode} setMode={setMode} />
         <Header />
         <Routes>
@@ -49,6 +49,7 @@ const App = () => {
         </Routes>
       </ ThemeProvider>
     </div>
+    </Fade>
   )
 }
 

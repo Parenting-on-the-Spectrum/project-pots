@@ -19,6 +19,8 @@ const About = (props) => {
     leads();
   }, []);
 
+  let counter = 0;
+
   return (
     leaders.length === 0 ?
       <Box sx={{ display: 'flex' }}>
@@ -27,7 +29,7 @@ const About = (props) => {
       :
       <Box sx={{ display: 'inline-flex', width: ' 80%' }}>
         {leaders.map((i) => (
-          <Individual postnomials={i.postnomials.join(', ')} name={i.name} picture={i.picture} key={i._id} />
+          <Individual postnomials={i.postnomials.join(', ')} name={i.name} picture={i.picture} key={i._id} delay={counter += 200} />
         ))}
       </Box>
   )
