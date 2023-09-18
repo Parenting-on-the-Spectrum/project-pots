@@ -13,7 +13,7 @@ const Mission = (props) => {
   return (
     <div >
 
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={'40px'} align="center">
           Parenting on the Spectrum is a non-profit organization dedicated
           to providing support and assistance to families with autistic children.

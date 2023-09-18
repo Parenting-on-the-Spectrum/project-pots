@@ -6,12 +6,11 @@ import Box from '@mui/material/Box';
 import Zoom from '@mui/material/Fade';
 
 const Individual = (props) => {
-  console.log(props.delay)
   return (
     <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
-    <Box sx={{margin: '5%'}}>
+    <Box sx={{margin: '5%', justifyContent: 'center'}}>
       <img src={props.picture}
-        alt={props.name} width="300" height="300" justify-content="center" ></img>
+        alt={props.name} width="250" height="250" justify-content="center" ></img>
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography variant="h5" color="text.secondary">
