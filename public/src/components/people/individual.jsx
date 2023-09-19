@@ -8,7 +8,7 @@ import Zoom from '@mui/material/Fade';
 const Individual = (props) => {
   return (
     <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
-    <Box sx={{margin: '5%', justifyContent: 'center'}}>
+    <Box sx={{margin: '3%', justifyContent: 'center'}}>
       <img src={props.picture}
         alt={props.name} width="250" height="250" justify-content="center" ></img>
       <Card sx={{ minWidth: 275 }}>
