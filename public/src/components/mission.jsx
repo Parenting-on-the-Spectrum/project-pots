@@ -13,12 +13,18 @@ const Mission = (props) => {
   return (
     <div >
 
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box>
         <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={'40px'} align="center">
           Parenting on the Spectrum is a non-profit organization dedicated
           to providing support and assistance to families with autistic children.
           Our mission is to empower parents and caregivers with the knowledge, resources,
           and community they need to navigate the unique challenges of raising a child on the autism spectrum.
+        </Typography>
+      </Box>
+
+
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} align="center">
           We recognize that every child is unique, and believe in the importance of:
           <ul>
             <li>Early intervention</li>
@@ -30,8 +36,8 @@ const Mission = (props) => {
             <li>A person-centered apprach to ABA</li>
           </ul>
         </Typography>
-        <Box sx={{ paddingLeft: '50px' }}>
-          <img src={props.pic} height="400px" style={{ borderRadius: "50px" }}></img>
+        <Box sx={{paddingRight: '30px'}}>
+          <img src={props.pic} height="300px" style={{ borderRadius: "50px" }}></img>
         </Box>
       </Box>
 
