@@ -26,7 +26,7 @@ const CareGiverVideos = (props) => {
         <CircularProgress />
       </Box>
       :
-      <Box sx={{ display: 'inline-flex', width: ' 80%' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
         {careVids.map((k) => (
           <SingleCareVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
             title={k.snippet.title} key={counter++} id={k.id.videoId} />

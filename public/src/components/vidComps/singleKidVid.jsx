@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 const SingleKidVid = (props) => {
   const card = (
     <React.Fragment>
-      <img src={props.thumbnails.medium.url} justify-content="left" padding='500%'></img>
+      <center><img src={props.thumbnails.medium.url} width='100%' sx={{justifyContent: "center"}} ></img></center>
       <CardContent>
         <Typography variant="h5" component="div">
           {props.title}
@@ -27,8 +27,8 @@ const SingleKidVid = (props) => {
   );
 
   return (
-    <Box>
-      <Card variant="outlined">{card}</Card>
+    <Box sx={{ width: '300px', padding: '2%'}}>
+      <Card variant="outlined" >{card}</Card>
     </Box>
   )
 }
