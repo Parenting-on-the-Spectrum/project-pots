@@ -10,8 +10,8 @@ const Individual = (props) => {
     <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
     <Box sx={{margin: '3%', justifyContent: 'center'}}>
       <img src={props.picture}
-        alt={props.name} width="250" height="250" justify-content="center" ></img>
-      <Card sx={{ minWidth: 275 }}>
+        alt={props.name} width="250" height="250" justify-content="center" style={{borderRadius: '15px'}} ></img>
+      <Card sx={{ minWidth: 275, borderRadius: '10px' }}>
         <CardContent>
           <Typography variant="h5" color="text.secondary">
             {props.name}
