@@ -27,7 +27,7 @@ const App = () => {
   const darkTheme = createTheme({
     palette: {
       mode: mode,
-    },
+    }
   });
 
   return (
