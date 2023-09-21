@@ -10,7 +10,7 @@ import Resources from './components/recComps/resources.jsx';
 import KidVideos from './components/vidComps/kidVideos.jsx';
 import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
 import Main from './components/main.jsx';
-import Toggle from './components/header/toggle.jsx'
+import Toggle from './components/header/toggle.jsx';
 import Fade from '@mui/material/Fade';
 // MUI components
 import { Typography } from "@mui/material";
@@ -37,7 +37,7 @@ const App = () => {
         <CssBaseline />
         <center><a href="/"><img src={logo} display="flex-center"
           justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
-        <Toggle mode={mode} setMode={setMode} />
+        <Toggle mode={mode} setMode={setMode}/>
         <Header />
         <Routes>
           <Route path="/" element={<Main pic={pic}/>} />
