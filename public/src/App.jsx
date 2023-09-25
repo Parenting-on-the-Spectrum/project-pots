@@ -30,6 +30,12 @@ const App = () => {
     }
   });
 
+  /*
+     <div style={{
+      backgroundImage: `url("https://via.placeholder.com/500")`
+    }}>
+  */
+
   return (
     <Fade in={true}>
     <div>
