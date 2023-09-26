@@ -20,6 +20,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 // pictures
 import logo from './images/copy.jpeg';
 import pic from './images/asd.jpg';
+import cube from './images/cube.jpg';
 
 const App = () => {
   const [mode, setMode] = useState(localStorage.getItem('theme'));
@@ -30,31 +31,31 @@ const App = () => {
     }
   });
 
-  /*
-     <div style={{
-      backgroundImage: `url("https://via.placeholder.com/500")`
-    }}>
-  */
 
   return (
     <Fade in={true}>
-    <div>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <center><a href="/"><img src={logo} display="flex-center"
-          justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
-        <Toggle mode={mode} setMode={setMode}/>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Main pic={pic}/>} />
-          <Route path="/aboutPage" element={<About />} />
-          <Route path="/kidVideosPage" element={<KidVideos />} />
-          <Route path="/resourcePage" element={<Resources />} />
-          <Route path="/tipsPage" element={<TipsTricks />} />
-          <Route path="/caregiverPage" element={<CaregiverVideos />} />
-        </Routes>
-      </ ThemeProvider>
-    </div>
+      <div style={{
+        backgroundImage: `url(${cube})`,
+        backgroundSize: '20%',
+        overflow: 'hidden'
+      }}>
+        {/* <div> */}
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <center><a href="/"><img src={logo} display="flex-center"
+            justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
+          <Toggle mode={mode} setMode={setMode} />
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main pic={pic} />} />
+            <Route path="/aboutPage" element={<About />} />
+            <Route path="/kidVideosPage" element={<KidVideos />} />
+            <Route path="/resourcePage" element={<Resources />} />
+            <Route path="/tipsPage" element={<TipsTricks />} />
+            <Route path="/caregiverPage" element={<CaregiverVideos />} />
+          </Routes>
+        </ ThemeProvider>
+      </div>
     </Fade>
   )
 }
