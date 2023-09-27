@@ -7,7 +7,7 @@ const SingleService = (props) => {
   return (
     <div>
       <Typography color="text.secondary">
-        <Link href="#" onClick={() => {
+        <Link href="/resourcePage" onClick={() => {
           window.open(props.link)
         }}>
           {props.name} | {props.type} </Link>

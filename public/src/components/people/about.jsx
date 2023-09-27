@@ -23,7 +23,7 @@ const About = (props) => {
 
   return (
     leaders.length === 0 ?
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <CircularProgress />
       </Box>
       :

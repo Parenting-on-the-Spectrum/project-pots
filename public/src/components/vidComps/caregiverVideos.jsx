@@ -22,7 +22,7 @@ const CareGiverVideos = (props) => {
 
   return (
     careVids.length === 0 ?
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <CircularProgress />
       </Box>
       :
