@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const SingleCareVid = (props) => {
   const card = (
@@ -20,7 +21,7 @@ const SingleCareVid = (props) => {
       </CardContent>
       <CardActions>
         <Link href={`https://www.youtube.com/watch?v=${props.id}`} target="_blank" rel="noopener">
-          Learn more
+          <YouTubeIcon/>
         </Link>
       </CardActions>
     </React.Fragment>

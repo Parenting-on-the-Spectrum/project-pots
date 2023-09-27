@@ -40,7 +40,7 @@ export default function BasicAccordion(props) {
 
   return (
     lengths() ?
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <CircularProgress />
       </Box>
       : <div>
