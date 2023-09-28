@@ -39,7 +39,6 @@ const App = () => {
         backgroundSize: '20%',
         overflow: 'hidden'
       }}>
-        {/* <div> */}
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <center><a href="/"><img src={logo} display="flex-center"

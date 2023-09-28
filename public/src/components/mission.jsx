@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Typography } from "@mui/material";
 import Box from '@mui/material/Box';
-import Zoom from '@mui/material/Fade';
 
 const Mission = (props) => {
 
@@ -41,7 +40,6 @@ const Mission = (props) => {
         </Box>
       </Box>
 
-      <Zoom in={true} style={{ transitionDelay: '3000ms' }}>
         <div>
           <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={sizes.pads} align="center">
             As a non-profit organization, we are deeply committed to making our
@@ -60,7 +58,6 @@ const Mission = (props) => {
             and individuals with lived experiences who are committed to walking this journey together,
             celebrating achievements, and providing unwavering support every step of the way.</Typography>
         </div>
-      </Zoom>
 
     </div>
   )

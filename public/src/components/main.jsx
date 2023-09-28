@@ -33,9 +33,9 @@ const Main = (props) => {
         <Zoom in={true} style={{ transitionDelay: '1800ms' }}>
           <div>
             <Mission pic={props.pic} />
-            <Footer />
           </div>
         </Zoom>
+        <Footer />
       </div>
     </Zoom>
   )
