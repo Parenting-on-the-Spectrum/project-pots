@@ -4,6 +4,8 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const axios = require('axios');
+const compression = require('compression');
+app.use(compression());
 
 app.use(express.static(path.join(__dirname, "./public/dist")));
 app.use(express.urlencoded({ extended: true }));
