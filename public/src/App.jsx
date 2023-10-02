@@ -1,5 +1,5 @@
 // react components and functions go here
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { Routes, Route } from "react-router-dom";
 // jsx components go here
@@ -45,14 +45,16 @@ const App = () => {
             justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
           <Toggle mode={mode} setMode={setMode} />
           <Header />
-          <Routes>
-            <Route path="/" element={<Main pic={pic} />} />
-            <Route path="/aboutPage" element={<About />} />
-            <Route path="/kidVideosPage" element={<KidVideos />} />
-            <Route path="/resourcePage" element={<Resources />} />
-            <Route path="/tipsPage" element={<TipsTricks />} />
-            <Route path="/caregiverPage" element={<CaregiverVideos />} />
-          </Routes>
+          <Suspense>
+            <Routes>
+              <Route path="/" element={<Main pic={pic} />} />
+              <Route path="/aboutPage" element={<About />} />
+              <Route path="/kidVideosPage" element={<KidVideos />} />
+              <Route path="/resourcePage" element={<Resources />} />
+              <Route path="/tipsPage" element={<TipsTricks />} />
+              <Route path="/caregiverPage" element={<CaregiverVideos />} />
+            </Routes>
+          </Suspense>
         </ ThemeProvider>
       </div>
     </Fade>
