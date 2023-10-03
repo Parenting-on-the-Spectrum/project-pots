@@ -10,7 +10,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 const SingleKidVid = (props) => {
   const card = (
     <React.Fragment>
-      <center><img src={props.thumbnails.medium.url} width='100%' sx={{justifyContent: "center"}} ></img></center>
+      <center><img src={props.thumbnails.medium.url} width='100%' sx={{justifyContent: "center"}} alt={props.title}></img></center>
       <CardContent>
         <Typography variant="h5" component="div">
           {props.title}

@@ -36,7 +36,7 @@ const Mission = (props) => {
           </ul>
         </Typography>
         <Box sx={{paddingRight: '30px'}}>
-          <img src={props.pic} height="300px" style={{ borderRadius: "50px" }}></img>
+          <img src={props.pic} height="300px" style={{ borderRadius: "50px" }} alt="asd"></img>
         </Box>
       </Box>
 

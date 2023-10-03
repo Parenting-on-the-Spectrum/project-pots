@@ -41,7 +41,7 @@ const App = () => {
       }}>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
-          <center><a href="/"><img src={logo} display="flex-center"
+          <center><a href="/"><img src={logo} display="flex-center" alt="logo"
             justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
           <Toggle mode={mode} setMode={setMode} />
           <Header />
