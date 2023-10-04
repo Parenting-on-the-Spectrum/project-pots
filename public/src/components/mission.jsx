@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 const Mission = (props) => {
 
   const sizes = {
-    font: "1.1rem",
+    font: "16pt",
     pads: "1% 20%"
   }
 
@@ -36,7 +36,7 @@ const Mission = (props) => {
           </ul>
         </Typography>
         <Box sx={{paddingRight: '30px'}}>
-          <img src={props.pic} height="300px" style={{ borderRadius: "50px" }} alt="asd"></img>
+          <img src={props.pic} style={{ borderRadius: "50px", maxWidth:'100%', height: '300', width: '300' }} alt="asd"></img>
         </Box>
       </Box>
 
