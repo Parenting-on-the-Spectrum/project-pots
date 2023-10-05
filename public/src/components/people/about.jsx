@@ -23,9 +23,11 @@ const About = (props) => {
 
   return (
     leaders.length === 0 ?
+    <center>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <CircularProgress />
       </Box>
+      </center>
       :
       <center><Box sx={{ display: 'inline-flex', width: ' 80%', flexWrap: 'wrap' }}>
         {leaders.map((i) => (

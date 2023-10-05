@@ -21,9 +21,11 @@ const TipsTricks = (props) => {
 
   return (
     tipTrick.length === 0 ?
-      <Box sx={{ display: 'flex' }}>
+    <center>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <CircularProgress />
       </Box>
+      </center>
       :
       <div >
         {tipTrick.map((t) => (

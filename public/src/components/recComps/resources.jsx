@@ -34,15 +34,17 @@ export default function BasicAccordion(props) {
 
   let lengths = () => {
     return commune.length === 0
-    && provide.length === 0
-    && service.length === 0;
+      && provide.length === 0
+      && service.length === 0;
   }
 
   return (
     lengths() ?
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <CircularProgress />
-      </Box>
+      <center>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <CircularProgress />
+        </Box>
+      </center>
       : <div>
         <Accordion>
           <AccordionSummary
