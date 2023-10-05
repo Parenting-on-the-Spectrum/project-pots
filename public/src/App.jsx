@@ -22,6 +22,10 @@ import logo from './images/copy.jpeg';
 import pic from './images/asd.jpg';
 import cube from './images/cube.jpg';
 
+// lazy refactor
+// const Main = lazy(() => import('./components/main.jsx'));
+// const Toggle = lazy(() => import('./components/header/toggle.jsx'));
+
 const App = () => {
   const [mode, setMode] = useState(localStorage.getItem('theme'));
 
@@ -41,11 +45,12 @@ const App = () => {
       }}>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
+          <Suspense>
           <center><a href="/"><img src={logo} display="flex-center" alt="logo"
             justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
+            </Suspense>
           <Toggle mode={mode} setMode={setMode} />
           <Header />
-          <Suspense>
             <Routes>
               <Route path="/" element={<Main pic={pic} />} />
               <Route path="/aboutPage" element={<About />} />
@@ -54,7 +59,6 @@ const App = () => {
               <Route path="/tipsPage" element={<TipsTricks />} />
               <Route path="/caregiverPage" element={<CaregiverVideos />} />
             </Routes>
-          </Suspense>
         </ ThemeProvider>
       </div>
     </Fade>

@@ -22,7 +22,7 @@ const Mission = (props) => {
       </Box>
 
 
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
         <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} align="center">
           We recognize that every child is unique, and believe in the importance of:
           <ul>

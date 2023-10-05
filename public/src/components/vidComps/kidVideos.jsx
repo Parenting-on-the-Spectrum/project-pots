@@ -22,16 +22,18 @@ const KidVideos = (props) => {
 
   return (
     kids.length === 0 ?
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <CircularProgress />
-      </Box>
+      <center>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <CircularProgress />
+        </Box>
+      </center>
       :
-      <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-        {kids.map((k) => (
-          <SingleKidVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
-            title={k.snippet.title} key={counter++} id={k.id.videoId} />
-        ))}
-      </Box>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {kids.map((k) => (
+            <SingleKidVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
+              title={k.snippet.title} key={counter++} id={k.id.videoId} />
+          ))}
+        </Box>
   )
 }
 
