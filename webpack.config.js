@@ -5,10 +5,8 @@ module.exports = {
   entry: './public/src/index.js',
   output: {
     path: path.resolve(__dirname, 'public/dist'),
-    publicPath: "./public",
-    filename: "static/js/[name].js",
-    chunkFilename: "static/js/[name].chunk.js",
-},
+    filename: 'bundle.js',
+  },
   mode: 'development',
   module: {
     rules: [
@@ -43,11 +41,6 @@ module.exports = {
         ]
       },
     ]
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
   },
   //
   // target: 'node', // use require() & use NodeJs CommonJS style

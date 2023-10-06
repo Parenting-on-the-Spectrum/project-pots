@@ -1,5 +1,6 @@
 .env
 node_modules
-public/dist/bundles
+public/dist/bundle.js
+public/dist/*.jpg
+public/dist/*.jpeg
 coverage
-dist
