@@ -4,9 +4,11 @@ module.exports = {
   devtool: 'eval-cheap-source-map',
   entry: './public/src/index.js',
   output: {
-    path: path.resolve(__dirname, 'public/dist'),
-    filename: 'bundle.js',
-  },
+    path: undefined,
+    publicPath: "/",
+    filename: "static/js/[name].js",
+    chunkFilename: "static/js/[name].chunk.js",
+},
   mode: 'development',
   module: {
     rules: [
@@ -42,6 +44,12 @@ module.exports = {
       },
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+  //
   // target: 'node', // use require() & use NodeJs CommonJS style
   // externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
   // externalsPresets: {
