@@ -3,14 +3,14 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { Routes, Route } from "react-router-dom";
 // jsx components go here
-import Header from './components/header/header.jsx';
+// import Header from './components/header/header.jsx';
 import About from './components/people/about.jsx';
 import TipsTricks from './components/tips/tipstricks.jsx';
 import Resources from './components/recComps/resources.jsx';
 import KidVideos from './components/vidComps/kidVideos.jsx';
 import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
-import Main from './components/main.jsx';
-import Toggle from './components/header/toggle.jsx';
+// import Main from './components/main.jsx';
+// import Toggle from './components/header/toggle.jsx';
 import Fade from '@mui/material/Fade';
 // MUI components
 import { Typography } from "@mui/material";
@@ -23,8 +23,9 @@ import pic from './images/asd.jpg';
 import cube from './images/cube.jpg';
 
 // lazy refactor
-// const Main = lazy(() => import('./components/main.jsx'));
-// const Toggle = lazy(() => import('./components/header/toggle.jsx'));
+const Main = lazy(() => import('./components/main.jsx'));
+const Toggle = lazy(() => import('./components/header/toggle.jsx'));
+const Header = lazy(() => import('./components/header/header.jsx'));
 
 const App = () => {
   const [mode, setMode] = useState(localStorage.getItem('theme'));
@@ -45,10 +46,8 @@ const App = () => {
       }}>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
-          <Suspense>
           <center><a href="/"><img src={logo} display="flex-center" alt="logo"
             justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
-            </Suspense>
           <Toggle mode={mode} setMode={setMode} />
           <Header />
             <Routes>

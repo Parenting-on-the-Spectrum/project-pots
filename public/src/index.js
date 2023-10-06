@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import App from './App.jsx';
 import { BrowserRouter } from "react-router-dom";
 
