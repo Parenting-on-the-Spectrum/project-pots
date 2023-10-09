@@ -17,6 +17,8 @@ import { Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 // pictures
 import logo from './images/copy.jpeg';
 import pic from './images/asd.jpg';
@@ -34,18 +36,23 @@ const App = () => {
 
 
   return (
-    <Fade in={true}>
-      <div style={{
-        backgroundImage: `url(${cube})`,
-        backgroundSize: '20%',
-        overflow: 'hidden'
-      }}>
-        <ThemeProvider theme={darkTheme}>
-          <CssBaseline />
-          <center><a href="/"><img src={logo} display="flex-center" alt="logo"
-            justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
-          <Toggle mode={mode} setMode={setMode} />
-          <Header />
+    <Suspense fallback={<center>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <CircularProgress />
+      </Box>
+    </center>}>
+      <Fade in={true}>
+        <div style={{
+          backgroundImage: `url(${cube})`,
+          backgroundSize: '20%',
+          overflow: 'hidden'
+        }}>
+          <ThemeProvider theme={darkTheme}>
+            <CssBaseline />
+            <center><a href="/"><img src={logo} display="flex-center" alt="logo"
+              justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
+            <Toggle mode={mode} setMode={setMode} />
+            <Header />
             <Routes>
               <Route path="/" element={<Main pic={pic} />} />
               <Route path="/aboutPage" element={<About />} />
@@ -54,9 +61,10 @@ const App = () => {
               <Route path="/tipsPage" element={<TipsTricks />} />
               <Route path="/caregiverPage" element={<CaregiverVideos />} />
             </Routes>
-        </ ThemeProvider>
-      </div>
-    </Fade>
+          </ ThemeProvider>
+        </div>
+      </Fade>
+    </Suspense>
   )
 }
 
