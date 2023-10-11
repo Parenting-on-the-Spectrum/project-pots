@@ -2,7 +2,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import { Routes, Route } from "react-router-dom";
-import { textVide } from 'text-vide';
 // jsx components go here
 import Header from './components/header/header.jsx';
 import About from './components/people/about.jsx';
