@@ -8,6 +8,20 @@ import CardContent from '@mui/material/CardContent';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const SingleCareVid = (props) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    Card
+  }, [isHovering])
+
+  const styler = () => {
+    if (isHovering) {
+      return {
+        opacity: 0.5
+      }
+    }
+  }
+
   const card = (
     <React.Fragment>
       <center><img src={props.thumbnails.medium.url} width='100%' sx={{justifyContent: "center"}}  alt={props.title}></img></center>
@@ -21,7 +35,9 @@ const SingleCareVid = (props) => {
       </CardContent>
       <CardActions>
         <Link href={`https://www.youtube.com/watch?v=${props.id}`} target="_blank" rel="noopener">
-          <YouTubeIcon/>
+          <YouTubeIcon style={styler()}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}/>
         </Link>
       </CardActions>
     </React.Fragment>

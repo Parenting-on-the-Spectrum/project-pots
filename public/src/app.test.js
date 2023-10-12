@@ -8,6 +8,9 @@ import '@testing-library/jest-dom';
 import About from './components/people/about.jsx';
 import Mission from './components/mission.jsx';
 import Footer from './components/footer.jsx';
+import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
+import KidVideos from './components/vidComps/kidVideos.jsx';
+import Tips from './components/tips/tipstricks.jsx';
 
 describe("Example tests", function () {
 
@@ -42,12 +45,40 @@ describe("Page tests", function () {
     expect(screen.getByText(/Who/)).toBeInTheDocument();
   });
 
-  test("Empty catch for loading progressbar", async () => {
+});
+
+describe("Empty catch tests", function () {
+
+  test("Empty About catch for loading progressbar", async () => {
     render(<About />);
     await screen.findAllByRole("progressbar")
-    .then((data) => {
-      expect(data.length).toBeGreaterThan(0);
-    })
+      .then((data) => {
+        expect(data.length).toBeGreaterThan(0);
+      })
+  });
+
+  test("Empty CaregiverVideos catch for loading progressbar", async () => {
+    render(<CaregiverVideos />);
+    await screen.findAllByRole("progressbar")
+      .then((data) => {
+        expect(data.length).toBeGreaterThan(0);
+      })
+  });
+
+  test("Empty KidVideos catch for loading progressbar", async () => {
+    render(<KidVideos />);
+    await screen.findAllByRole("progressbar")
+      .then((data) => {
+        expect(data.length).toBeGreaterThan(0);
+      })
+  });
+
+  test("Empty Tips catch for loading progressbar", async () => {
+    render(<Tips />);
+    await screen.findAllByRole("progressbar")
+      .then((data) => {
+        expect(data.length).toBeGreaterThan(0);
+      })
   });
 
 });
