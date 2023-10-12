@@ -10,7 +10,7 @@ import Mission from './components/mission.jsx';
 import Footer from './components/footer.jsx';
 import CaregiverVideos from './components/vidComps/caregiverVideos.jsx';
 import KidVideos from './components/vidComps/kidVideos.jsx';
-import Tips from './components/tips/tipsTricks.jsx';
+import Tips from './components/tips/tipstricks.jsx';
 
 describe("Example tests", function () {
 
