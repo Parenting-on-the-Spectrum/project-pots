@@ -26,7 +26,7 @@ import cube from './images/cube.jpg';
 
 
 const App = () => {
-  const [mode, setMode] = useState(localStorage.getItem('theme'));
+  const [mode, setMode] = useState(localStorage.getItem('pots-theme'));
 
   const darkTheme = createTheme({
     palette: {

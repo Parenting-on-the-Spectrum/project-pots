@@ -3,9 +3,9 @@ import App from './App.jsx';
 import { BrowserRouter } from "react-router-dom";
 
 import { createRoot } from 'react-dom/client';
-let firstTheme = localStorage.getItem('theme')
+let firstTheme = localStorage.getItem('pots-theme')
 if (firstTheme === undefined || firstTheme === null) {
-  localStorage.setItem('theme', 'light');
+  localStorage.setItem('pots-theme', 'light');
 }
 
 const node = document.getElementById('root');
