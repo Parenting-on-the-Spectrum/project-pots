@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 
 const KidVideos = (props) => {
   const [kids, setKids] = useState([]);
+  const [slice, setSlice] = useState(9)
   var counter = 0;
 
   let kidVidFetch = () => {
