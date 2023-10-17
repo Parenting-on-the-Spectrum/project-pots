@@ -1,4 +1,5 @@
 const path = require('path');
+require('dotenv').config()
 
 module.exports = {
   devtool: 'eval-cheap-source-map',
@@ -7,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist'),
     filename: 'bundle.js',
   },
-  mode: 'development',
+  mode: `${process.env.WEBPACK}`,
   module: {
     rules: [
       {
