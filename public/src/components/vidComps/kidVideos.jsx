@@ -3,11 +3,13 @@ import axios from 'axios';
 import SingleKidVid from './singleKidVid.jsx';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 const KidVideos = (props) => {
   const [kids, setKids] = useState([]);
-  const [slice, setSlice] = useState(9)
+  const [slice, setSlice] = useState(4)
   var counter = 0;
+  console.log(kids.length)
 
   let kidVidFetch = () => {
     axios.get('/kideos')
@@ -19,7 +21,24 @@ const KidVideos = (props) => {
 
   useEffect(() => {
     kidVidFetch();
-  }, []);
+    show()
+  }, [slice]);
+
+  const show = () => {
+    if (slice < kids.length) {
+      return (
+        <center>
+          <Button variant="contained" onClick={(e) => {
+            e.preventDefault();
+            setSlice(slice * 2)
+          }}>
+            More Videos
+          </Button>
+        </center>
+      )
+    }
+    else { return; }
+  }
 
   return (
     kids.length === 0 ?
@@ -29,12 +48,15 @@ const KidVideos = (props) => {
         </Box>
       </center>
       :
+      <div>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {kids.map((k) => (
+          {kids.slice(0, slice).map((k) => (
             <SingleKidVid thumbnails={k.snippet.thumbnails} description={k.snippet.description}
               title={k.snippet.title} key={counter++} id={k.id.videoId} />
           ))}
         </Box>
+        {show()}
+      </div>
   )
 }
 
