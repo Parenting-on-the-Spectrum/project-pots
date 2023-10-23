@@ -9,7 +9,6 @@ const KidVideos = (props) => {
   const [kids, setKids] = useState([]);
   const [slice, setSlice] = useState(4)
   var counter = 0;
-  console.log(kids.length)
 
   let kidVidFetch = () => {
     axios.get('/kideos')
@@ -19,18 +18,13 @@ const KidVideos = (props) => {
       .catch((err) => err.stack)
   }
 
-  useEffect(() => {
-    kidVidFetch();
-    show()
-  }, [slice]);
-
   const show = () => {
     if (slice < kids.length) {
       return (
         <center>
           <Button variant="contained" onClick={(e) => {
             e.preventDefault();
-            setSlice(slice * 2)
+            setSlice(slice + 4)
           }}>
             More Videos
           </Button>
@@ -39,6 +33,11 @@ const KidVideos = (props) => {
     }
     else { return; }
   }
+
+  useEffect(() => {
+    kidVidFetch();
+    show()
+  }, [slice]);
 
   return (
     kids.length === 0 ?
