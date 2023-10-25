@@ -41,7 +41,9 @@ const Footer = (props) => {
           </Grid>
           <Grid item xs={12}>
             <Typography color="textSecondary" variant="subtitle1" align="center">
-              <Link color="inherit" underline="none" href="/aboutPage">About Us</Link>
+              <Button color="inherit" onClick={(e) => {
+                 window.location.href = "/aboutPage";
+              }}>Our People</Button>
               <Button color="inherit" onClick={handleOpen}>Follow Us</Button>
               <Modal
                 open={open}
