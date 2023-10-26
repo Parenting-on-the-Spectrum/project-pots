@@ -42,7 +42,8 @@ const App = () => {
     </center>}>
       <Fade in={true}>
         <div style={{
-          backgroundImage: `url(${cube})`,
+          background: 'rgb(251,247,245)',
+          backgroundImage: ` url(${cube})`,
           backgroundSize: '20%',
           overflow: 'hidden'
         }}>
