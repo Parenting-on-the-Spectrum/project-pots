@@ -32,7 +32,7 @@ const Mission = (props) => {
             <li>Personalized support</li>
             <li>Evidence-based strategies</li>
             <li>Fostering inclusivity and acceptance</li>
-            <li>A person-centered apprach to ABA</li>
+            <li>A person-centered approach to ABA</li>
           </ul>
         </Typography>
         <Box sx={{paddingRight: '30px'}}>
