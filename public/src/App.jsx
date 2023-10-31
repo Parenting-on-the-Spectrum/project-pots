@@ -20,9 +20,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 // pictures
-import logo from './images/copy.jpeg';
+// import logo from './images/copy.jpeg';
 import pic from './images/asd.jpg';
 import cube from './images/cube.jpg';
+import darkCube from './images/darkcube.jpg';
+import lightCube from './images/lightcube.jpg';
 
 
 const App = () => {
@@ -34,6 +36,19 @@ const App = () => {
     }
   });
 
+  useEffect(() => {
+    logo()
+  }, [mode])
+
+  const logo = () => {
+    if (mode === 'light') {
+      return lightCube
+    } else {
+      return darkCube
+    }
+    // mode === 'light'? lightCube: darkCube
+  }
+
   return (
     <Suspense fallback={<center>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -42,14 +57,13 @@ const App = () => {
     </center>}>
       <Fade in={true}>
         <div style={{
-          background: 'rgb(251,247,245)',
           backgroundImage: ` url(${cube})`,
           backgroundSize: '20%',
           overflow: 'hidden'
         }}>
           <ThemeProvider theme={darkTheme}>
             <CssBaseline />
-            <center><a href="/"><img src={logo} display="flex-center" alt="logo"
+            <center><a href="/"><img src={logo()} display="flex-center" alt="logo"
               justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
             <Toggle mode={mode} setMode={setMode} />
             <Header />
