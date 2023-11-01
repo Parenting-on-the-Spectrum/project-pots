@@ -5,15 +5,16 @@ import Box from '@mui/material/Box';
 const Mission = (props) => {
 
   const sizes = {
-    font: "16pt",
-    pads: "1% 20%"
+    font: "1.3rem",
+    pads: "2% 10%"
   }
 
   return (
     <div >
 
       <Box>
-        <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} padding={'40px'} align="center">
+        <Typography fontSize={sizes.font} component="div"
+        sx={{ flexGrow: 1}} padding={sizes.pads}  align="center">
           Parenting on the Spectrum is a non-profit organization dedicated
           to providing support and assistance to families with autistic children.
           Our mission is to empower parents and caregivers with the knowledge, resources,
@@ -22,7 +23,8 @@ const Mission = (props) => {
       </Box>
 
 
-      <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap',
+       justifyContent: 'space-between', paddingLeft: '20px', paddingRight: '20px' }}>
         <Typography fontSize={sizes.font} component="div" sx={{ flexGrow: 1 }} align="center">
           We recognize that every child is unique, and believe in the importance of:
           <ul>
@@ -35,8 +37,9 @@ const Mission = (props) => {
             <li>A person-centered approach to ABA</li>
           </ul>
         </Typography>
-        <Box sx={{paddingRight: '30px'}}>
-          <img src={props.pic} style={{ borderRadius: "50px", maxWidth:'100%', height: '300', width: '300' }} alt="asd"></img>
+        <Box style={{alignSelf: 'flex-end'}}>
+          <img src={props.pic} style={{ borderRadius: "50px", transform: 'scale(0.8)', maxWidth: '100%'}}
+          alt="asd"></img>
         </Box>
       </Box>
 
