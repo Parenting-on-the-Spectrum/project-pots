@@ -1,12 +1,14 @@
 import React from 'react';
 import DropDown from './dropdown.jsx';
+import Toggle from './toggle.jsx';
 import { Box, Typography, AppBar, Toolbar, Button, IconButton } from "@mui/material";
 
 const Header = (props) => {
   return (
     <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+      <Box>
+        <AppBar position="static" style={{display: 'flex', flexDirection: 'row',
+        alignItems: 'baseline', justifyContent: 'space-between'}}>
           <Toolbar>
             <IconButton
               size="large"
@@ -21,6 +23,7 @@ const Header = (props) => {
               Info
             </Typography>
           </Toolbar>
+          <Toggle mode={props.mode} setMode={props.setMode} />
         </AppBar>
       </Box>
     </div>
