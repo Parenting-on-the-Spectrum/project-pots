@@ -46,7 +46,6 @@ const App = () => {
     } else {
       return darkCube
     }
-    // mode === 'light'? lightCube: darkCube
   }
 
   return (
@@ -59,14 +58,18 @@ const App = () => {
         <div style={{
           backgroundImage: ` url(${cube})`,
           backgroundSize: '20%',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          // backgroundColor: 'black'
         }}>
           <ThemeProvider theme={darkTheme}>
             <CssBaseline />
-            <center><a href="/"><img src={logo()} display="flex-center" alt="logo"
-              justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15 }}></img></a></center>
-            <Toggle mode={mode} setMode={setMode} />
-            <Header />
+            <center>
+              <a href="/">
+                <img src={logo()} display="flex-center" alt="logo"
+                  justify-content="center" style={{ width: '25%', height: '25%', borderRadius: 15, padding: "10px" }}></img>
+              </a>
+            </center>
+            <Header mode={mode} setMode={setMode} />
             <Routes>
               <Route path="/" element={<Main pic={pic} />} />
               <Route path="/aboutPage" element={<About />} />

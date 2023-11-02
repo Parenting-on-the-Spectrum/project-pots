@@ -58,7 +58,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export default function ThemeSwitch(props) {
   const setter = () => {
     if (props.mode === 'light') {
-      localStorage.setItem('pots-theme', 'dark') ;
+      localStorage.setItem('pots-theme', 'dark');
       props.setMode(localStorage.getItem('pots-theme'));
     } else if (props.mode === 'dark') {
       localStorage.setItem('pots-theme', 'light')
@@ -72,13 +72,17 @@ export default function ThemeSwitch(props) {
   }
 
   return (
-    <FormGroup>
-      <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} checked={themeBool()} onChange={setter}/>}
-        label="Select Mode"
-      />
-      <Stack direction="row" spacing={1} alignItems="center">
-      </Stack>
-    </FormGroup>
+    <div style={{display: 'flex', alignItems: 'baseline'}}>
+      <div>Select Mode</div>
+      <div>
+        <FormGroup>
+          <FormControlLabel
+            control={<MaterialUISwitch sx={{ m: 1 }} checked={themeBool()} onChange={setter} />}
+          />
+          <Stack direction="row" spacing={1} alignItems="center">
+          </Stack>
+        </FormGroup>
+      </div>
+    </div>
   );
 }
