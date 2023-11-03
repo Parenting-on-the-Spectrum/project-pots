@@ -78,6 +78,7 @@ export default function ThemeSwitch(props) {
         <FormGroup>
           <FormControlLabel
             control={<MaterialUISwitch sx={{ m: 1 }} checked={themeBool()} onChange={setter} />}
+            label=' '
           />
           <Stack direction="row" spacing={1} alignItems="center">
           </Stack>

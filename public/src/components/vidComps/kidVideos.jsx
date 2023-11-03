@@ -21,7 +21,7 @@ const KidVideos = (props) => {
   const show = () => {
     if (slice < kids.length) {
       return (
-        <center>
+        <center style={{padding: '2%'}}>
           <Button variant="contained" onClick={(e) => {
             e.preventDefault();
             setSlice(slice + 4)
