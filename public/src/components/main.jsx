@@ -20,21 +20,17 @@ const darkTheme = createTheme({
 
 const Main = (props) => {
   return (
-    <Zoom in={true} style={{ transitionDelay: '300ms' }}>
+    <Zoom in={true} style={{ transitionDelay: '450ms' }}>
       <div>
         <Typography variant="h2" component="div" sx={{ flexGrow: 1 }} align="center">
           Welcome!
         </Typography>
-        <Zoom in={true} style={{ transitionDelay: '750ms' }}>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} padding="1%" align="center">
             We are Parenting on the Spectrum
           </Typography>
-        </Zoom>
-        <Zoom in={true} style={{ transitionDelay: '1200ms' }}>
           <div>
             <Mission pic={props.pic} />
           </div>
-        </Zoom>
         <Footer />
       </div>
     </Zoom>
