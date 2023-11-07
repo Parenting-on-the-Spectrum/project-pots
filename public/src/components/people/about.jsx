@@ -29,7 +29,7 @@ const About = (props) => {
       </Box>
       </center>
       :
-      <center><Box sx={{ display: 'inline-flex', width: ' 80%', flexWrap: 'wrap' }}>
+      <center><Box sx={{ display: 'inline-flex', width: ' 80%', flexWrap: 'wrap', justifyContent: 'center' }}>
         {leaders.map((i) => (
           <Individual postnomials={i.postnomials.join(', ')} name={i.name} picture={i.picture} key={i._id} delay={counter += 200} />
         ))}
