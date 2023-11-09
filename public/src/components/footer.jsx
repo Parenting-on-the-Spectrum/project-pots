@@ -51,6 +51,7 @@ const Footer = (props) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
               >
+                <center>
                 <Box sx={style}>
                   <Typography id="modal-modal-title" variant="h6" component="h2">
                     Follow us on social media!
@@ -62,6 +63,7 @@ const Footer = (props) => {
                     <Link href="#" padding="10px" onClick={() => window.open('https://www.linkedin.com/')} underline="hover">{<LinkedInIcon />}</Link>
                   </Typography>
                 </Box>
+                </center>
               </Modal>
             </Typography>
           </Grid>
