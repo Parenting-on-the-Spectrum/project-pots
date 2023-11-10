@@ -1,15 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Typography, Modal, Button } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import Zoom from '@mui/material/Fade';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 const Individual = (props) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [flipped, setFlip] = useState(false);
+
+  const flips = () => {setFlip(!flipped)}
 
   const style = {
     position: 'absolute',
@@ -25,7 +24,7 @@ const Individual = (props) => {
 
   return (
     <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
-      <Box sx={{ margin: '3%', justifyContent: 'center' }}>
+      <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
         <img src={props.picture}
           alt={props.name} width="250" height="250" justify-content="center" style={{ borderRadius: '15px' }} ></img>
         <Card sx={{ minWidth: 275, borderRadius: '10px' }}>
@@ -36,19 +35,6 @@ const Individual = (props) => {
             <Typography variant="h6" color="text.secondary">
               {props.postnomials}
             </Typography>
-            <Button><InfoOutlinedIcon onClick={handleOpen} /> </Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Placeholder
-                </Typography>
-              </Box>
-            </Modal>
           </CardContent>
         </Card>
       </Box>
