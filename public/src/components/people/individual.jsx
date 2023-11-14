@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Modal, Button } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,8 +8,7 @@ import Zoom from '@mui/material/Fade';
 const Individual = (props) => {
   const [flipped, setFlip] = useState(false);
 
-  const flips = () => {setFlip(!flipped)}
-  console.log(flipped)
+  const flips = () => { setFlip(!flipped) }
 
   const style = {
     position: 'absolute',
@@ -25,29 +24,43 @@ const Individual = (props) => {
 
   const cardState = () => {
     return (
-    flipped === false ? (
-      <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
-        <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
-          <img src={props.picture}
-            alt={props.name} width="250" height="250" justify-content="center" style={{ borderRadius: '15px' }} ></img>
-          <Card sx={{ minWidth: 275, borderRadius: '10px' }}>
-            <CardContent>
-              <Typography variant="h5" color="text.secondary">
-                {props.name}
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                {props.postnomials}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Box>
-      </Zoom>
+      flipped === false ? (
+        <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
+          <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
+            <img src={props.picture}
+              alt={props.name} width="250" height="250" justify-content="center" style={{ borderRadius: '15px' }} ></img>
+            <Card sx={{ minWidth: 275, borderRadius: '10px' }}>
+              <CardContent>
+                <Typography variant="h5" color="text.secondary">
+                  {props.name}
+                </Typography>
+                <Typography variant="h6" color="text.secondary">
+                  {props.postnomials}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+        </Zoom>
+      )
+        :
+        (
+          <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
+            <Card sx={{ minWidth: 275, borderRadius: '10px', minHeight: 350 }}>
+              <CardContent>
+                <Typography variant="h5" color="text.secondary">
+                  {props.name}
+                </Typography>
+                <Typography variant="h6" color="text.secondary">
+                  {props.postnomials}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+        )
     )
-    :
-    (<div onClick={flips}>Gucci Gang</div>)
-  )};
+  };
 
-  useEffect(() => {cardState()}, [flipped]);
+  useEffect(() => { cardState() }, [flipped]);
 
   return cardState()
 }
