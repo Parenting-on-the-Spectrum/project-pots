@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import Zoom from '@mui/material/Fade';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Individual = (props) => {
   const [flipped, setFlip] = useState(false);
@@ -25,7 +26,7 @@ const Individual = (props) => {
   const cardState = () => {
     return (
       flipped === false ? (
-        <Zoom in={true} style={{ transitionDelay: `${props.delay}ms` }}>
+        <Zoom in={true} style={{ transitionDelay: '100ms' }}>
           <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
             <img src={props.picture}
               alt={props.name} width="250" height="250" justify-content="center" style={{ borderRadius: '15px' }} ></img>
@@ -44,7 +45,8 @@ const Individual = (props) => {
       )
         :
         (
-          <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
+          <Zoom in={true} style={{ transitionDelay: '100ms' }}>
+          <Box sx={{ margin: '3%', justifyContent: 'center' }}>
             <Card sx={{ minWidth: 275, borderRadius: '10px', minHeight: 350 }}>
               <CardContent>
                 <Typography variant="h5" color="text.secondary">
@@ -54,8 +56,10 @@ const Individual = (props) => {
                   {props.postnomials}
                 </Typography>
               </CardContent>
+              <ArrowBackIcon onClick={flips}/>
             </Card>
           </Box>
+          </Zoom>
         )
     )
   };
