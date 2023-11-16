@@ -8,6 +8,15 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Individual = (props) => {
   const [flipped, setFlip] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const styler = () => {
+    if (isHovering) {
+      return {
+        opacity: 0.5
+      }
+    }
+  }
 
   const flips = () => { setFlip(!flipped) }
 
