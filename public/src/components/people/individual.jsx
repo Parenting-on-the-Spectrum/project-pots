@@ -13,7 +13,7 @@ const Individual = (props) => {
   const styler = () => {
     if (isHovering) {
       return {
-        opacity: 0.5
+        opacity: 0.5,
       }
     }
   }
@@ -55,19 +55,19 @@ const Individual = (props) => {
         :
         (
           <Zoom in={true} style={{ transitionDelay: '100ms' }}>
-          <Box sx={{ margin: '3%', justifyContent: 'center' }}>
-            <Card sx={{ minWidth: 275, borderRadius: '10px', minHeight: 350 }}>
-              <CardContent>
-                <Typography variant="h5" color="text.secondary">
-                  {props.name}
-                </Typography>
-                <Typography variant="h6" color="text.secondary">
-                  {props.postnomials}
-                </Typography>
-              </CardContent>
-              <ArrowBackIcon onClick={flips}/>
-            </Card>
-          </Box>
+            <Box sx={{ margin: '3%', justifyContent: 'center' }}>
+              <Card sx={{ minWidth: 275, borderRadius: '10px', minHeight: 350 }}>
+                <CardContent>
+                  <Typography variant="h6" color="text.secondary">
+                    {props.postnomials}
+                  </Typography>
+                </CardContent>
+                <ArrowBackIcon onClick={flips}
+                  style={styler()}
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)} />
+              </Card>
+            </Box>
           </Zoom>
         )
     )
