@@ -56,10 +56,10 @@ const Individual = (props) => {
         (
           <Zoom in={true} style={{ transitionDelay: '100ms' }}>
             <Box sx={{ margin: '3%', justifyContent: 'center' }}>
-              <Card sx={{ minWidth: 275, borderRadius: '10px', minHeight: 350 }}>
+              <Card sx={{ width: 275, borderRadius: '10px', height: 350 }}>
                 <CardContent>
                   <Typography variant="h6" color="text.secondary">
-                    {props.postnomials}
+                    {props.bio}
                   </Typography>
                 </CardContent>
                 <ArrowBackIcon onClick={flips}
