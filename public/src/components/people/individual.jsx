@@ -4,19 +4,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import Zoom from '@mui/material/Fade';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Individual = (props) => {
   const [flipped, setFlip] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-
-  const styler = () => {
-    if (isHovering) {
-      return {
-        opacity: 0.5,
-      }
-    }
-  }
 
   const flips = () => { setFlip(!flipped) }
 
@@ -36,7 +28,7 @@ const Individual = (props) => {
     return (
       flipped === false ? (
         <Zoom in={true} style={{ transitionDelay: '100ms' }}>
-          <Box sx={{ margin: '3%', justifyContent: 'center' }} onClick={flips}>
+          <Box sx={{ margin: '3%', justifyContent: 'center' }}>
             <img src={props.picture}
               alt={props.name} width="250" height="250" justify-content="center" style={{ borderRadius: '15px' }} ></img>
             <Card sx={{ minWidth: 275, borderRadius: '10px' }}>
@@ -48,6 +40,9 @@ const Individual = (props) => {
                   {props.postnomials}
                 </Typography>
               </CardContent>
+              <Button>
+                <InfoRoundedIcon onClick={flips} />
+              </Button>
             </Card>
           </Box>
         </Zoom>
@@ -56,16 +51,15 @@ const Individual = (props) => {
         (
           <Zoom in={true} style={{ transitionDelay: '100ms' }}>
             <Box sx={{ margin: '3%', justifyContent: 'center' }}>
-              <Card sx={{ width: 275, borderRadius: '10px', height: 350 }}>
+              <Card sx={{ width: 275, borderRadius: '10px', height: 385 }}>
                 <CardContent>
                   <Typography variant="h6" color="text.secondary">
                     {props.bio}
                   </Typography>
                 </CardContent>
-                <ArrowBackIcon onClick={flips}
-                  style={styler()}
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)} />
+                <Button>
+                  <ArrowBackIcon onClick={flips} />
+                </Button>
               </Card>
             </Box>
           </Zoom>
