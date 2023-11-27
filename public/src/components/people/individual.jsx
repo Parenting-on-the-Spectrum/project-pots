@@ -51,7 +51,10 @@ const Individual = (props) => {
         (
           <Zoom in={true} style={{ transitionDelay: '100ms' }}>
             <Box sx={{ margin: '3%', justifyContent: 'center' }}>
-              <Card sx={{ width: 275, borderRadius: '10px', height: 385 }}>
+              <Card sx={{
+                width: 275, borderRadius: '10px', height: 385,
+                display: 'flex', justifyContent: 'center', flexDirection: 'column'
+              }}>
                 <CardContent>
                   <Typography variant="h6" color="text.secondary">
                     {props.bio}
