@@ -9,6 +9,9 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Individual = (props) => {
   const [flipped, setFlip] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const flips = () => { setFlip(!flipped) }
 
@@ -76,3 +79,26 @@ const Individual = (props) => {
 }
 
 export default Individual;
+
+/*
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+<Button color="inherit" onClick={handleOpen}>Follow Us</Button>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <center>
+                <Box sx={style}>
+                  <Typography variant="h6" color="text.secondary">
+                    {props.bio}
+                  </Typography>
+                </Box>
+                </center>
+              </Modal>
+
+*/
